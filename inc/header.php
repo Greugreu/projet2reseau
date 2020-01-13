@@ -42,8 +42,11 @@
 <section id="section">
 
     <div class="wrap2">
-        <h2 id="h2">dcrypt</h2>
-
+        <div id="effect">
+        <h2>dcrypt</h2>
+        <p>Lisez votre trame</p>
+        <p>Inscrivez-vous</p>
+        </div>
     </div>
 
 </section>
