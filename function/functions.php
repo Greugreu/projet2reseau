@@ -1,4 +1,5 @@
 <?php
+
 function clean($string)
 {
     return trim(strip_tags($string));

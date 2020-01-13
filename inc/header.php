@@ -29,7 +29,7 @@
                 <li><a href="./trame/trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">
-                <a class="connect" href="#">Connexion</a>
+                <a class="connect" href="login.php">Connexion</a>
                 <a class="burger" href="#"><i></i></a>
             </div>
         </nav>
