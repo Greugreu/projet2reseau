@@ -4,8 +4,8 @@
 
     <meta charset="utf-8">
     <title>DCRYPT</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="script" href="./assets/js/main.js"
+<!--    <link rel="stylesheet" href="./assets/css/style.css">
+-->    <link rel="script" href="./assets/js/main.js"
 
 </head>
 
@@ -21,7 +21,7 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="#">Redirection</a></li>
+                <li><a href="signup.php">Inscription</a></li>
                 <li><a href="../trame/trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">
