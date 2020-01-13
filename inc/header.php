@@ -10,18 +10,19 @@
 </head>
 
 <body>
-<div class="intro">
-    <div class="intro_bg"></div>
-</div>
+
 <header id="header">
     <div class="wrap">
+        <div class="logo">
+            <img src="https://via.placeholder.com/100x50.png?text=DCRYPT" alt="">
+        </div>
         <nav class="nav">
             <div class="logo"><img src="https://via.placeholder.com/100x50.png?text=DCRYPT" alt=""></div>
             <ul>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="#">Redirection</a></li>
+                <li><a href="signup.php">Inscription</a></li>
                 <li><a href="../trame/trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">

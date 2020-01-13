@@ -3,12 +3,7 @@ function clean($string)
 {
     return trim(strip_tags($string));
 }
-function debug($error)
-{
-    echo "<pre>";
-    print_r($error);
-    echo "</pre>";
-}
+
 function textValid($err, $value, $minl, $maxl, $key, $empty = true)
 {
     if (!empty($value)) {
@@ -24,6 +19,7 @@ function textValid($err, $value, $minl, $maxl, $key, $empty = true)
     }
     return $err;
 }
+
 function cleanMail($err, $mail, $key)
 {
     if (!empty($mail)) {
@@ -35,6 +31,7 @@ function cleanMail($err, $mail, $key)
     }
     return $err;
 }
+
 function validateINT($err, $int, $key)
 {
     if (!empty($int)) {
