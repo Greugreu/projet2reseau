@@ -1,9 +1,8 @@
 <?php
-$fichier = file_get_contents('capture3.json');
+
+$fichier = file_get_contents('capture.json');
 
 $json = json_decode($fichier, true);
-
-
 //    echo "<pre>";
 //    var_dump($json[0]);
 //    echo "</pre>";
