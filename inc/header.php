@@ -19,7 +19,7 @@
     <div class="fixed">
     <div class="wrap">
         <div class="logo">
-            <a href="../index.php"><img src="assets/img/logo.png" alt=""></a>
+            <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
         </div>
         <nav class="nav">
             <ul>

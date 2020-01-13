@@ -38,3 +38,32 @@
 #section h2 {position: relative; color: #fff;text-transform: uppercase; text-align: center;font-size: 2em;margin-top: 20px}
 #section p {position: relative; color: #fff;text-transform: uppercase; text-align: center;font-size: 1em;margin-top: 20px;
 display: inline-block; }
+
+/* footer */
+
+footer {
+    margin-top: 376px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    text-align: center;
+}
+
+
+footer ul
+{
+    margin: 0 auto;
+}
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 50px;
+}
