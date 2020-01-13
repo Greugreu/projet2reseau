@@ -167,12 +167,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#ignore capture.json
-trame/capture.json
+#PDO
+pdo.php
 
-#ignore jQuery
-!/node_modules/
-!/package-lock.json
 # End of https://www.gitignore.io/api/osx,linux,macos,windows,phpstorm+all
-
-
+/node_modules/
+/package-lock.json
