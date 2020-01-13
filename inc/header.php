@@ -4,24 +4,28 @@
 
     <meta charset="utf-8">
     <title>DCRYPT</title>
-<!--    <link rel="stylesheet" href="./assets/css/style.css">
--->    <link rel="script" href="./assets/js/main.js"
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="script" href="./assets/js/main.js"
 
 </head>
 
 <body>
 
+<div class="intro">
+    <div class="intro_bg"></div>
+</div>
+
 <header id="header">
     <div class="wrap">
         <div class="logo">
-            <img src="https://via.placeholder.com/100x50.png?text=DCRYPT" alt="">
+            <img src="assets/img/logo.png" alt="">
         </div>
         <nav class="nav">
             <ul>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="signup.php">Inscription</a></li>
+                <li><a href="#">Redirection</a></li>
                 <li><a href="../trame/trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">
@@ -30,5 +34,5 @@
             </div>
         </nav>
     </div>
-    <!--    <div class="clear"></div>-->
+<div class="clear"></div>
 </header>
