@@ -1,5 +1,5 @@
 <?php
-$fichier = file_get_contents('./capture.json');
+$fichier = file_get_contents('capture.json');
 
 $json = json_decode($fichier, true);
 
