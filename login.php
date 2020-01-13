@@ -1,8 +1,5 @@
 <?php
 include 'inc/header.php';
-include 'function/functions.php';
-include 'function/debug.php';
-include 'inc/pdo.php';
 include 'inc/login.inc.php';
 
 ?>

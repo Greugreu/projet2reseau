@@ -1,6 +1,7 @@
 <?php
 session_start();
-require 'function/functions.php';
+include 'function/functions.php';
+include 'function/debug.php';
 require 'inc/pdo.php';
 
 $errors = array();
