@@ -11,12 +11,7 @@
 
 <body>
 
-<div class="intro">
-    <div class="intro_bg"></div>
-</div>
-
 <header id="header">
-    <div class="fixed">
     <div class="wrap">
         <div class="logo">
             <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
@@ -31,10 +26,22 @@
             </ul>
             <div class="connected">
                 <a class="connect" href="login.php">Connexion</a>
-                <a class="burger" href="#"><i></i></a>
+                <nav role='navigation'>
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <a href="#"><li>Home</li></a>
+                            <a href="#"><li>About</li></a>
+                            <a href="#"><li>Info</li></a>
+                            <a href="#"><li>Contact</li></a>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </nav>
-    </div>
     </div>
 <div class="clear"></div>
 </header>
@@ -42,11 +49,15 @@
 <section id="section">
 
     <div class="wrap2">
-        <div id="effect">
-        <h2>dcrypt</h2>
-        <p>Lisez votre trame</p>
-        <p>Inscrivez-vous</p>
+
+        <h2 id="h2">dcrypt</h2>
+        <div class="boxleft">
+            <p><a class="button btnl" href="">Lisez votre trame</a></p>
         </div>
+        <div class="boxright">
+            <p><a class="button btnr" href="">Inscrivez-vous</a></p>
+        </div>
+        <div class="clear"></div>
     </div>
 
 </section>
