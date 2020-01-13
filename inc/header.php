@@ -18,7 +18,7 @@
 <header id="header">
     <div class="wrap">
         <div class="logo">
-            <img src="https://via.placeholder.com/100x50.png?text=DCRYPT" alt="">
+            <img src="assets/img/logo.png" alt="">
         </div>
         <nav class="nav">
             <ul>
@@ -34,5 +34,5 @@
             </div>
         </nav>
     </div>
-    <!--    <div class="clear"></div>-->
+<div class="clear"></div>
 </header>

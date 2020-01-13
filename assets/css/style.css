@@ -4,12 +4,13 @@
 .wrap {max-width: 1920px; width: 100%; margin: 0 auto;}
 
 #header {z-index: 1; position: relative}
-#header .logo {width: 100px;height: 100px;float: left;}
+#header .logo {width: 100px;height: 100px;float: left;margin-top: 20px}
+#header .logo img {height: 30px; width: 100px;margin-left: 15px;}
 #header nav ul {float: left; margin-left: 300px;}
 #header nav ul li {display: inline-block; padding: 10px 20px; line-height: 40px;}
 #header a {font-size: .8em; text-decoration: none; color: white; text-transform: uppercase;font-weight: bold}
 #header a:hover {color: lightslategrey}
-#header .connected {float: right; display: inline-block; line-height: 10px; padding: 10px;font-weight: bold;}
+#header .connected {float: right; display: inline-block; line-height: 20px; padding: 10px;font-weight: bold;}
 #header .connected a {padding: 10px ; margin-right: 10px}
 
 /* Menu Burger */
