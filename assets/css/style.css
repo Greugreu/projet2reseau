@@ -4,11 +4,11 @@
 body {background: black;}
 .wrap {max-width: 1920px; width: 100%; margin: 0 auto;}
 #header .logo {width: 100px;height: 100px;float: left;}
-#header nav ul {float: left; margin-left: 500px}
+#header nav ul {float: left; margin-left: 300px}
 #header nav ul li {display: inline-block; padding: 10px 20px; line-height: 40px;}
-#header a {font-size: 1.1em; text-decoration: none; color: white; text-transform: uppercase}
+#header a {font-size: .8em; text-decoration: none; color: white; text-transform: uppercase;font-weight: bold}
 #header a:hover {color: lightslategrey}
-#header .connected {float: right; display: inline-block; line-height: 10px; padding: 10px;}
+#header .connected {float: right; display: inline-block; line-height: 10px; padding: 10px;font-weight: bold;}
 #header .connected a {padding: 10px ; margin-right: 10px}
 /* Menu Burger */
 .burger {display: inline-block;width:18px;height:18px;cursor: pointer;text-decoration: none;}
