@@ -167,4 +167,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#PDO
+pdo.php
+
 # End of https://www.gitignore.io/api/osx,linux,macos,windows,phpstorm+all
