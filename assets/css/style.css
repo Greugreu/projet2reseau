@@ -12,7 +12,6 @@
 #header a:hover {color: lightslategrey}
 #header .connected {float: right; display: inline-block; line-height: 20px; padding: 10px;font-weight: bold;}
 #header .connected a {padding: 10px ; margin-right: 10px}
-
 /* Menu Burger */
 .burger {display: inline-block;width:18px;height:18px;cursor: pointer;text-decoration: none;}
 .burger i {position: relative;display: inline-block;width: 18px;height: 3px;color:#252525;font:bold 14px/.4 Helvetica;text-transform: uppercase;text-indent:-55px;background: #fff;transition:all .2s ease-out;}
@@ -32,3 +31,8 @@
     background-size:cover;transform:scale(1.5);transition:all 1s ease-in;}
 .intro_bg.zout {transform:scale(2);}
 /*Fin zoom in*/
+
+/*Premiere section*/
+
+#section .wrap2 {max-width: 740px; width: 100%; margin: 0 auto;}
+#section h2 {position: relative; color: #fff;text-transform: uppercase; text-align: center;font-size: 2em;margin-top: 20px}

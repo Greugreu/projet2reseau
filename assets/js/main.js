@@ -1,5 +1,10 @@
-/*Menu Burger*/
+$(document).ready(function () {
 
+    ScrollReveal().reveal('#h2', { duration: 7000});
+
+})
+
+/*Menu Burger*/
 $('a').click(function() {
     $(this).toggleClass('active');
 });

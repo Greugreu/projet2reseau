@@ -16,9 +16,10 @@
 </div>
 
 <header id="header">
+    <div class="fixed">
     <div class="wrap">
         <div class="logo">
-            <img src="assets/img/logo.png" alt="">
+            <a href="../index.php"><img src="assets/img/logo.png" alt=""></a>
         </div>
         <nav class="nav">
             <ul>
@@ -34,5 +35,15 @@
             </div>
         </nav>
     </div>
+    </div>
 <div class="clear"></div>
 </header>
+
+<section id="section">
+
+    <div class="wrap2">
+        <h2 id="h2">dcrypt</h2>
+
+    </div>
+
+</section>
