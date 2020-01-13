@@ -1,6 +1,7 @@
 <?php
 include 'inc/header.php';
 include 'function/functions.php';
+include 'inc/pdo.php';
 
 ?>
 
@@ -29,3 +30,24 @@ include 'function/functions.php';
         <input type="submit" name="submitted" value="Envoyer">
     </form>
 </div>
+
+<?php
+
+session_start();
+$errors = array();
+$success = false;
+
+if (!empty($_POST['submitted'])) {
+    //XSS
+    $name = clean($_POST['name']);
+    $surname = clean($_POST['surname']);
+    $mail = clean($_POST['mail']);
+    $pwd = clean($_POST['password']);
+    $cfrm = clean($_POST['cfrmPassword']);
+
+    //validation
+    textValid($errors, $name, 2, 50, 'name');
+    textValid($errors, $surname, 2, 50, 'surname');
+    cleanMail($errors, $mail, 'mail');
+
+}
