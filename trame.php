@@ -10,7 +10,7 @@ $json = json_decode($fichier, true);
 //$ipAddrSrc = $json[0]['_source']['layers']['ip']['ip.src'];
 //echo "<br>" . $ipAddrSrc;
 
-require_once("../inc/header.php"); ?>
+require_once("./inc/header.php"); ?>
 
 <table>
     <caption>Capture Trame</caption>
