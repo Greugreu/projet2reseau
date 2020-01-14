@@ -1,13 +1,12 @@
 $(document).ready(function () {
 
     ScrollReveal().reveal('#h2', { duration: 7000});
+    ScrollReveal().reveal('.boxleft', { duration: 7000});
+    ScrollReveal().reveal('.boxright', { duration: 7000});
 
-})
-
-/*Menu Burger*/
-$('a').click(function() {
-    $(this).toggleClass('active');
 });
+
+
 
 /*Zoom site*/
 

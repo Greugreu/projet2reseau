@@ -15,10 +15,10 @@ require_once ("inc/header.php"); ?>
 
             <h2 id="h2">dcrypt</h2>
             <div class="boxleft">
-                <p><a class="button btnl" href="">Lisez votre trame</a></p>
+                <p><a class="btn btnl" href="">Lisez votre trame</a></p>
             </div>
             <div class="boxright">
-                <p><a class="button btnr" href="">Inscrivez-vous</a></p>
+                <p><a class="btn btnr" href="">Inscrivez-vous</a></p>
             </div>
             <div class="clear"></div>
         </div>

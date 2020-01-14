@@ -27,7 +27,6 @@ require_once("inc/header.php"); ?>
     <tbody>
     <?php
     $nb = count($json);
-    echo $nb;
 
     for ($i = 0; $i < $nb; $i++) {
         echo '<tr>';
