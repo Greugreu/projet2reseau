@@ -1,4 +1,6 @@
+<div class="clear"></div>
 <footer>
+
     <nav>
         <ul>
             <li><a class="copyright" href="">Dcrypt © 2020 </a></li>
