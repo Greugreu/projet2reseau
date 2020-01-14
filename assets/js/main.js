@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    ScrollReveal().reveal('#h2', { duration: 7000});
-    ScrollReveal().reveal('.boxleft', { duration: 7000});
-    ScrollReveal().reveal('.boxright', { duration: 7000});
+    ScrollReveal().reveal('#h2', { duration: 2000});
+    ScrollReveal().reveal('.boxleft', { duration: 3000});
+    ScrollReveal().reveal('.boxright', { duration: 4000});
 
     //AJAX modal
     $('#manual-ajax').click(function(event) {

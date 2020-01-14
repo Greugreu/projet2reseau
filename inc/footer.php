@@ -20,6 +20,7 @@
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="assets/js/main.js"></script>
 
 </body>
