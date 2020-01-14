@@ -3,6 +3,8 @@
 <head>
 
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+
     <title>DCRYPT</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="script" href="./assets/js/main.js"
