@@ -4,7 +4,6 @@
 
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
-
     <title>DCRYPT</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="script" href="./assets/js/main.js"
@@ -15,7 +14,7 @@
 
 <div class="wrap">
 <header id="header">
-        <nav id="nav" class="nav" class="sticky">
+        <nav id="nav" class="nav">
             <div class="logo">
                 <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
             </div>

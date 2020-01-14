@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    ScrollReveal().reveal('#h2', { duration: 7000});
-    ScrollReveal().reveal('.boxleft', { duration: 7000});
-    ScrollReveal().reveal('.boxright', { duration: 7000});
+
 
 });
 
-
+ScrollReveal().reveal('#h2', { duration: 3000});
+ScrollReveal().reveal('.boxleft', { duration: 3000});
+ScrollReveal().reveal('.boxright', { duration: 3000});
 
 /*Zoom site*/
 
