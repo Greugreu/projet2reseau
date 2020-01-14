@@ -54,5 +54,5 @@ require_once("inc/header.php"); ?>
     ?>
     </tbody>
 </table>
-</body>
-</html>
+<canvas id="myChart"></canvas>
+<?php require_once("inc/header.php");
