@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="script" href="./assets/js/main.js">
 
 </head>
 
@@ -23,7 +24,7 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="#">Redirection</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">
@@ -44,7 +45,7 @@
                             <a href="#">
                                 <li>Info</li>
                             </a>
-                            <a href="#">
+                            <a href="contact.php">
                                 <li>Contact</li>
                             </a>
                         </ul>
@@ -54,4 +55,5 @@
         </nav>
     <div class="clear"></div>
 </header>
+
 </div>
