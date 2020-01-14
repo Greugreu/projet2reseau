@@ -59,6 +59,8 @@ text-decoration:none;}
 #section .btnr:hover {background:#ECECEC;color:rgba(0, 0, 0, 100);}
 
 
+#table {margin-top: 120px;}
+#form-inscription {margin-top: 150px;}
 #myChart {margin-top: 120px;}
 
 /* footer */
@@ -71,7 +73,6 @@ footer {
     left: 0;
     background-color: rgba(0, 0, 0, 0.50);
     text-align: center;
-    margin-top: 200px;
 }
 
 

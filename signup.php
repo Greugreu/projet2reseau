@@ -6,7 +6,7 @@ include 'inc/pdo.php';
 include 'inc/signup.inc.php';
 ?>
 
-<div class="form">
+<div id="form-inscription" class="form">
     <form action="#" class="signup" method="post">
         <div class="surname">
             <label for="surname"></label>
