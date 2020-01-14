@@ -1,6 +1,5 @@
 <?php
-include 'inc/login.inc.php';
-
+require ('inc/login.inc.php');
 ?>
 
 <div class="modal">
