@@ -58,7 +58,32 @@ text-decoration:none;}
 #section .btnl:hover {background:#ECECEC;border: 2px solid #ECECEC;}
 #section .btnr:hover {background:#ECECEC;color:rgba(0, 0, 0, 100);}
 
+/* Tableau Trame */
 
+#table{
+    border-collapse: collapse;
+    max-width: 95%;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 2.5%;
+}
+#table th, #table td {
+    border: 1px solid #dddddd;
+    padding: 10px 5px;
+}
+#table  tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#table tr:hover{
+    background-color: #dddddd;
+}
+#table th{
+    background-color: royalblue;
+    color: #dddddd;
+}
+
+
+/* Graphique */
 #myChart {margin-top: 120px;}
 
 /* footer */

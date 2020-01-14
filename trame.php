@@ -14,8 +14,8 @@ require_once("inc/header.php"); ?>
 
     <canvas id="myChart"></canvas>
     <table id="table">
-        <caption>Capture Trame</caption>
         <thead>
+        <th>Date et heure</th>
         <th>Adresse IP Source</th>
         <th>Adresse IP Destination</th>
         <th>Adresse MAC Source</th>
@@ -34,6 +34,11 @@ require_once("inc/header.php"); ?>
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
             $row = $json[$i]['_source']['layers'];
+            if  (isset($row['frame'])){
+                echo '<td>' . $json[$i]['_source']['layers']['frame']['frame.time'] . '</td>';
+            } else {
+                echo '<td></td>';
+            }
             if (isset($row['ip'])) {
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
@@ -48,18 +53,22 @@ require_once("inc/header.php"); ?>
                 echo '<td></td>';
                 echo '<td></td>';
             }
-            if (isset($row['udp'])) {
+        if (isset($row['udp'])) {
                 echo '<td>UDP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
                 $udp++;
-            }
-            if (isset($row['tcp'])) {
+            }else if (isset($row['tcp'])) {
                 echo '<td>TCP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
                 $tcp++;
-            }
+            } else {
+            echo '<td></td>';
+            echo '<td></td>';
+            echo '<td></td>';
+        }
+
             echo '</tr>';
         }
 
