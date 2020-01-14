@@ -4,6 +4,15 @@ $(document).ready(function () {
     ScrollReveal().reveal('.boxleft', { duration: 7000});
     ScrollReveal().reveal('.boxright', { duration: 7000});
 
+    //AJAX modal
+    $('#manual-ajax').click(function(event) {
+        event.preventDefault();
+        this.blur(); // Manually remove focus from clicked link.
+        $.get(this.href, function(html) {
+            $(html).appendTo('body').modal();
+        });
+    });
+
 });
 
 
