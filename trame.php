@@ -12,47 +12,84 @@ $json = json_decode($fichier, true);
 
 require_once("inc/header.php"); ?>
 
-<table id="table">
-    <caption>Capture Trame</caption>
-    <thead>
-    <th>Adresse IP Source</th>
-    <th>Adresse IP Destination</th>
-    <th>Adresse MAC Source</th>
-    <th>Adresse MAC Destination</th>
-    <th>Protocole</th>
-    <th>Port Source</th>
-    <th>Port Destination</th>
+    <canvas id="myChart"></canvas>
+    <table id="table">
+        <caption>Capture Trame</caption>
+        <thead>
+        <th>Adresse IP Source</th>
+        <th>Adresse IP Destination</th>
+        <th>Adresse MAC Source</th>
+        <th>Adresse MAC Destination</th>
+        <th>Protocole</th>
+        <th>Port Source</th>
+        <th>Port Destination</th>
 
-    </thead>
-    <tbody>
-    <?php
-    $nb = count($json);
+        </thead>
+        <tbody>
+        <?php
+        $nb = count($json);
+        $udp = 0;
+        $tcp = 0;
 
-    for ($i = 0; $i < $nb; $i++) {
-        echo '<tr>';
-        $row = $json[$i]['_source']['layers'];
-        if (isset($row['ip'])) {
-            echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+        for ($i = 0; $i < $nb; $i++) {
+            echo '<tr>';
+            $row = $json[$i]['_source']['layers'];
+            if (isset($row['ip'])) {
+                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+            } else {
+                echo '<td></td>';
+                echo '<td></td>';
+            }
+            if (isset($row['eth'])) {
+                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
+            } else {
+                echo '<td></td>';
+                echo '<td></td>';
+            }
+            if (isset($row['udp'])) {
+                echo '<td>UDP</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
+                $udp++;
+            }
+            if (isset($row['tcp'])) {
+                echo '<td>TCP</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
+                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
+                $tcp++;
+            }
+            echo '</tr>';
         }
-        if (isset($row['eth'])) {
-            echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
-        }
-        if (isset($row['udp'])) {
-            echo '<td>UDP</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
-        }
-        if (isset($row['tcp'])) {
-            echo '<td>TCP</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
-            echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
-        }
-        echo '</tr>';
-    }
-    ?>
-    </tbody>
-</table>
-<canvas id="myChart"></canvas>
-<?php require_once("inc/header.php");
+
+        ?>
+        </tbody>
+    </table>
+    <script>
+        console.log(<?=$tcp?>)
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'pie',
+
+            // The data for our dataset
+            data: {
+                labels: ['TCP', 'UDP'],
+                datasets: [{
+                    label: 'TCP / UDP',
+                    backgroundColor: [
+                        'rgb(148, 68, 15)',
+                        'rgb(0, 0, 0)'
+
+                    ],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: [<?=$tcp?>, <?=$udp;?>]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+<?php require_once("inc/footer.php");
