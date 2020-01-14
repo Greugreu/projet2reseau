@@ -22,7 +22,7 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="./trame/trame.php">Lecture trame</a></li>
+                <li><a href="trame.php">Lecture trame</a></li>
             </ul>
             <div class="connected">
                 <a class="connect" href="login.php">Connexion</a>
