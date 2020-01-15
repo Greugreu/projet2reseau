@@ -79,6 +79,11 @@ if (is_logged()) {
         ?>
         </tbody>
     </table>
+    <?php } else {
+
+    header('Location: 404.php');
+
+    } ?>
     <script>
         console.log(<?=$tcp?>)
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -106,8 +111,3 @@ if (is_logged()) {
         });
     </script>
 <?php require_once("inc/footer.php");
-} else {
-
-    header('Location: 404.php');
-
-} ?>
