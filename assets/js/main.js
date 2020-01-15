@@ -12,6 +12,9 @@ $(document).ready(function () {
             $(html).appendTo('body').modal();
         });
     });
+    $("#fade").modal({
+        fadeDuration: 100
+    });
 
 });
 
