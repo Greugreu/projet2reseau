@@ -30,27 +30,23 @@ if (!empty($_POST['submitted'])) {
 
 
 require_once ("inc/header.php");?>
-
+<h1 class="contact_title">Contactez-nous !</h1>
 <div class="wrap3">
     <div class="contact">
         <form action="" method="post">
 
             <input type="text" id="email" name="email" placeholder="Votre email" value="<?php if (!empty($_POST['email'])) {echo $_POST['email'];} ?>">
-            <p class="error error1"> <?php if(!empty($errors['email'])) {echo $errors['email'];} ?></p>
+                <p class="error error1"> <?php if(!empty($errors['email'])) {echo $errors['email'];} ?></p>
 
             <input type="text" placeholder="Objet" id="object" name="object" value="<?php if (!empty($_POST['object'])) {echo $_POST['object'];} ?>">
-            <p class="error error3"><?php if(!empty($errors['object'])) {echo $errors['object'];} ?></p>
+                <p class="error error3"><?php if(!empty($errors['object'])) {echo $errors['object'];} ?></p>
 
             <textarea id="message" placeholder="Votre message" name="message"><?php if (!empty($_POST['message'])) {echo $_POST['message'];} ?></textarea>
-            <p class="error error3"><?php if(!empty($errors['message'])) {echo $errors['message'];} ?></p>
+                <p class="error error3"><?php if(!empty($errors['message'])) {echo $errors['message'];} ?></p>
 
             <input id="submit_contact" type="submit" name="submitted" value="Envoyer">
 
-
-
-        </form>
     </div>
-</div>
 
 
 
