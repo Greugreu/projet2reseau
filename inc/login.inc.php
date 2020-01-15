@@ -28,8 +28,11 @@ if (!empty($_POST['submitted'])) {
                     'id' => $user['id'],
                     'nom' => $user['surname'],
                     'prenom' => $user['name'],
-                    'ip' => $_SERVER['REMOTE_ADDR']
+                    'ip' => $_SERVER['REMOTE_ADDR'],
                 );
+
+                header('Location: index.php');
+
             } else {
                 $errors = 'Login ou mot de passe incorrect';
             }

@@ -134,3 +134,14 @@ function is_logged()
     }
     return false;
 }
+
+function emailValid($err, $mail, $key) {
+    if (!empty($mail)) {
+        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            $err[$key] = 'Email non valide';
+        }
+    } else {
+        $err[$key] = "Veuillez renseigner ce champ";
+    }
+    return $err;
+}
