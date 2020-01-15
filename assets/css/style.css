@@ -61,6 +61,80 @@ text-decoration:none;}
 
 #table {margin-top: 120px;}
 
+
+/* contact */
+
+.wrap3 {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.contact {
+    margin-top: 300px;
+    margin-left: 35.9%;
+}
+
+#object {
+    margin-top: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 10%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+}
+
+#email {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 10%;
+    padding-left: 2%;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    font-size: 1em;
+}
+
+
+#message {
+    margin-top: 15px;
+    padding-bottom: 65px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 11.3%;
+    padding-left: 2%;
+    padding-top: 7px;
+    font-size: 1em;
+    font-family: 'Muli', sans-serif;
+}
+
+input::placeholder {
+    color: black;
+    font-family: 'Muli', sans-serif;
+    opacity: 1;
+}
+
+textarea::placeholder {
+    font-family: 'Muli', sans-serif;
+    color: black;
+    opacity: 1;
+}
+
+textarea {
+    resize: none;
+}
+
+
+#submit_contact {
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 6%;
+    padding: 10px 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 /* footer */
 
 footer {
@@ -89,6 +163,10 @@ footer ul li {
     display: inline-block;
     margin-right: 50px;
 }
+
+
+
+
 
 
 
