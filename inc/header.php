@@ -28,9 +28,9 @@
             </ul>
             <div class="connected">
                 <?php if (empty($_SESSION)) { ?>
-                <a class="connect" id="manual-ajax" href="login.php">Connexion</a>
+                <a class="connect" href="login.php">Connexion</a>
                 <?php } else { ?>
-                <a class="connect" id="manual-ajax" href="deconnexion.php">Deconnexion</a>
+                <a class="connect" href="deconnexion.php">Deconnexion</a>
                 <?php }?>
                 <nav role='navigation'>
                     <div id="menuToggle">
