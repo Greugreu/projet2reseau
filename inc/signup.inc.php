@@ -40,7 +40,7 @@ if (!empty($_POST['submitted'])) {
         $hash = password_hash($pwd, PASSWORD_BCRYPT);
         $token = generateRandomString(255);
 
-        $sql = "INSERT INTO user VALUES (NULL, :name, :surname, :mail, :pwd, :token, NOW(), NULL)";
+        $sql = "INSERT INTO user VALUES (NULL, :name, :surname, :mail, :pwd, :token, 'user' , NOW(), NULL)";
         $query = $pdo->prepare($sql);
         $query->bindValue(':name', $name, PDO::PARAM_STR);
         $query->bindValue(':surname', $surname, PDO::PARAM_STR);
