@@ -35,11 +35,6 @@ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);}
 #menuToggle input:checked ~ ul {transform: scale(1.0, 1.0);opacity: 1;}
 
 /*Fin Menu burger*/
-
-/*Zoom in on load*/
-
-/*Fin zoom in*/
-
 /*Premiere section*/
 
 #section {background-image:url('../img/background.png');width: 100%;height: 800px}
@@ -58,7 +53,16 @@ text-decoration:none;}
 #section .btnl:hover {background:#ECECEC;border: 2px solid #ECECEC;}
 #section .btnr:hover {background:#ECECEC;color:rgba(0, 0, 0, 100);}
 
+/*Page 404 */
+.wrap404 {max-width: 600px;width: 100%;margin: 0 auto;}
+#body {background: #262626;}
+#body h2 {text-align: center; color: #fff; font-size: 10em;margin-top: 250px;}
+#body p {text-align: center;color: #fff;margin-top: 20px;}
+#body img {margin-top: 30px;}
+
 /* Tableau Trame */
+
+.login {margin-top: 150px;}
 
 #table{
     border-collapse: collapse;
@@ -91,6 +95,97 @@ text-decoration:none;}
 
 #form-inscription {margin-top: 150px;}
 
+
+/* contact */
+
+.contact_title {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 1.7em;
+}
+
+.wrap3 {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.contact {
+    margin-top: 30px;
+    margin-left: 35.9%;
+}
+
+#object {
+    margin-top: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 10%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+}
+
+#email {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 10%;
+    padding-left: 2%;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    font-size: 1em;
+}
+
+
+#message {
+    margin-top: 15px;
+    padding-bottom: 65px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-right: 11.3%;
+    padding-left: 2%;
+    padding-top: 7px;
+    font-size: 1em;
+    font-family: 'Muli', sans-serif;
+}
+
+input::placeholder {
+    color: black;
+    font-family: 'Muli', sans-serif;
+    opacity: 1;
+}
+
+textarea::placeholder {
+    font-family: 'Muli', sans-serif;
+    color: black;
+    opacity: 1;
+}
+
+textarea {
+    resize: none;
+}
+
+#submit_contact {
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 6%;
+    padding: 10px 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-bottom: 70px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.error {
+    margin-left: 2%;
+    margin-top: 5px;
+    color: red;
+}
+
+
+
 /* footer */
 
 footer {
@@ -101,14 +196,12 @@ footer {
     left: 0;
     background-color: rgba(0, 0, 0, 0.50);
     text-align: center;
-    margin-top: 200px;
 }
 
-
-footer ul
-{
+footer ul {
     margin: 0 auto;
 }
+
 footer ul li a {
     color: white;
     text-decoration: none;
@@ -119,6 +212,12 @@ footer ul li {
     display: inline-block;
     margin-right: 50px;
 }
+
+footer a:hover {color: lightslategrey}
+
+
+
+
 
 
 

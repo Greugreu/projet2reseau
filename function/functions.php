@@ -15,7 +15,7 @@ function textValid($err, $value, $minl, $maxl, $key, $empty = true)
         }
     } else {
         if ($empty) {
-            $err[$key] = 'Veuillez renseigner le champ';
+            $err[$key] = 'Veuillez renseigner ce champ';
         }
     }
     return $err;
@@ -142,6 +142,22 @@ function emailValid($err, $mail, $key) {
         }
     } else {
         $err[$key] = "Veuillez renseigner ce champ";
+    }
+    return $err;
+}
+
+function objectValid($err, $value, $minl, $maxl, $key, $empty = true)
+{
+    if (!empty($value)) {
+        if (mb_strlen($value) < $minl) {
+            $err[$key] = 'Minimum ' . $minl . ' caracteres';
+        } elseif (mb_strlen($value) > $maxl) {
+            $err[$key] = 'Minimum ' . $maxl . ' caracteres';
+        }
+    } else {
+        if ($empty) {
+            $err[$key] = 'Veuillez renseigner ce champ';
+        }
     }
     return $err;
 }
