@@ -12,7 +12,7 @@ require_once ("inc/header.php"); ?>
 
         <h2 id="h2"><img src="assets/img/logo_main.png" alt=""></h2>
         <div class="boxleft">
-            <p><a class="btn btnl" href="">Lisez votre trame</a></p>
+            <p><a class="btn btnl" href="signup.php">Lisez votre trame</a></p>
         </div>
         <div class="boxright">
             <p><a class="btn btnr" href="signup.php">Inscrivez-vous</a></p>
