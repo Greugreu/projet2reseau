@@ -10,7 +10,11 @@ $json = json_decode($fichier, true);
 //$ipAddrSrc = $json[0]['_source']['layers']['ip']['ip.src'];
 //echo "<br>" . $ipAddrSrc;
 
-require_once("inc/header.php"); ?>
+
+require_once("inc/header.php");
+require("function/functions.php");
+if (is_logged()) {
+?>
 
     <canvas id="myChart"></canvas>
     <table id="table">
@@ -75,6 +79,11 @@ require_once("inc/header.php"); ?>
         ?>
         </tbody>
     </table>
+    <?php } else {
+
+    header('Location: 404.php');
+
+    } ?>
     <script>
         console.log(<?=$tcp?>)
         var ctx = document.getElementById('myChart').getContext('2d');

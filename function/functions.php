@@ -118,13 +118,13 @@ function inputDate($err, $date, $key)
 }
 function is_logged()
 {
-    $roles = array('abonne', 'admin');
+    $roles = array('user', 'admin');
     if (!empty($_SESSION['login'])) {
         if (!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
-            if (!empty($_SESSION['login']['pseudo'])) {
+            if (!empty($_SESSION['login']['nom'])) {
                 if (in_array($_SESSION['login']['role'], $roles)) {
                     if (!empty($_SESSION['login']['ip'])) {
-                        if (!empty($_SESSION['login']['ip']) === $_SERVER['REMOTE_ADDR']) {
+                        if (!empty($_SESSION['login']['ip']) == $_SERVER['REMOTE_ADDR']) {
                             return true;
                         }
                     }
@@ -161,3 +161,5 @@ function objectValid($err, $value, $minl, $maxl, $key, $empty = true)
     }
     return $err;
 }
+
+

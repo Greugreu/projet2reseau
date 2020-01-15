@@ -28,6 +28,7 @@ if (!empty($_POST['submitted'])) {
                     'id' => $user['id'],
                     'nom' => $user['surname'],
                     'prenom' => $user['name'],
+                    'role' => $user['role'],
                     'ip' => $_SERVER['REMOTE_ADDR'],
                 );
 
