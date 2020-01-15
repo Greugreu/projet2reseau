@@ -1,5 +1,7 @@
 <?php
 require ('inc/login.inc.php');
+
+require_once ('inc/header.php');
 ?>
 
 <div class="login">
