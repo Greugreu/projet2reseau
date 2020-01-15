@@ -1,6 +1,6 @@
 @import "reset.css";
 
-body {font-family: 'Muli', sans-serif;}
+body {font-family: 'Muli', sans-serif; background: radial-gradient(grey, black)}
 .wrap {max-width:1600px; width: 100%; margin: 0 auto;}
 
 
@@ -94,10 +94,53 @@ text-decoration:none;}
 
 /* contact */
 
+.material-icons {
+    font-size: 3em;
+    margin-left: 50%;
+    color: white;
+    margin-top: 40px;
+}
+
+.phone {
+    width: 50%;
+    float: left;
+    margin-bottom: 75px;
+}
+
+.mail {
+    width: 50%;
+    float: left;
+    margin-bottom: 75px;
+}
+
+.tel {
+    margin-left: 43.5%;
+    margin-top: 15px;
+    color: white;
+}
+
+.email {
+    margin-left: 41.5%;
+    margin-top: 15px;
+    color: white;
+}
+
 .contact_title {
     text-align: center;
+    text-transform: uppercase;
     margin-top: 150px;
-    font-size: 1.7em;
+    font-size: 2em;
+    color: white;
+}
+
+.barre {
+    width: 15%;
+    height: 3px;
+    background-color: white;
+    border: white solid 1px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 42.5%;
 }
 
 .wrap3 {
@@ -109,46 +152,53 @@ text-decoration:none;}
 .contact {
     margin-top: 30px;
     margin-left: 35.9%;
+    color: white;
 }
 
 #object {
     margin-top: 15px;
-    border: 2px solid black;
+    border: 2px solid;
     border-radius: 5px;
-    padding-right: 10%;
+    border-color: darkgrey;
+    width: 44%;
     padding-left: 2%;
     font-size: 1em;
     padding-bottom: 8px;
     padding-top: 7px;
+    color: black;
 }
 
 #email {
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: darkgrey;
     border-radius: 5px;
-    padding-right: 10%;
+    width: 44%;
     padding-left: 2%;
     padding-bottom: 8px;
     padding-top: 7px;
     font-size: 1em;
+    color: black;
 }
 
 
 #message {
     margin-top: 15px;
     padding-bottom: 65px;
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: darkgrey;
     border-radius: 5px;
-    padding-right: 11.3%;
+    width: 44%;
     padding-left: 2%;
     padding-top: 7px;
     font-size: 1em;
     font-family: 'Muli', sans-serif;
+    color: black;
 }
 
 input::placeholder {
-    color: black;
     font-family: 'Muli', sans-serif;
     opacity: 1;
+    color: black;
 }
 
 textarea::placeholder {
@@ -161,17 +211,23 @@ textarea {
     resize: none;
 }
 
+form {
+    color: white;
+}
+
 #submit_contact {
     text-align: center;
     margin-top: 25px;
     margin-left: 6%;
     padding: 10px 80px;
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: darkgrey;
     border-radius: 10px;
     font-size: 1em;
     margin-bottom: 70px;
     background-color: white;
     cursor: pointer;
+    color: black;
 }
 
 .error {

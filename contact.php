@@ -13,8 +13,8 @@ if (!empty($_POST['submitted'])) {
     $object = clean($_POST['object']);
     $text = clean($_POST['message']);
 
-    $errors = textValid($errors, $text, 10, 2000, 'message');
-    $errors = objectValid($errors, $object, 5, 50, 'object');
+    $errors = textValid($errors, $text, 5, 20, 'message');
+    $errors = objectValid($errors, $object, 2, 50, 'object');
     $errors = emailValid($errors, $email, 'email');
 
     if(count($errors) === 0) {
@@ -30,7 +30,9 @@ if (!empty($_POST['submitted'])) {
 
 
 require_once ("inc/header.php");?>
+
 <h1 class="contact_title">Contactez-nous !</h1>
+<div class="barre"></div>
 <div class="wrap3">
     <div class="contact">
         <form action="" method="post">
@@ -46,6 +48,17 @@ require_once ("inc/header.php");?>
 
             <input id="submit_contact" type="submit" name="submitted" value="Envoyer">
 
+    </div>
+
+    <div class="adress">
+        <div class="phone">
+            <i class="material-icons">&#xe325;</i>
+            <p class="tel">06.35.48.62.46</p>
+        </div>
+        <div class="mail">
+            <i class="material-icons">&#xe0be;</i>
+            <p class="email">dcrypt@gmail.com</p>
+        </div>
     </div>
 
 
