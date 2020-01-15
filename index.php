@@ -1,8 +1,6 @@
 <?php
-
-
-
-
+session_start();
+include 'function/debug.php';
 
 
 
@@ -17,7 +15,7 @@ require_once ("inc/header.php"); ?>
             <p><a class="btn btnl" href="">Lisez votre trame</a></p>
         </div>
         <div class="boxright">
-            <p><a class="btn btnr" href="">Inscrivez-vous</a></p>
+            <p><a class="btn btnr" href="signup.php">Inscrivez-vous</a></p>
         </div>
         <div class="clear"></div>
     </div>
