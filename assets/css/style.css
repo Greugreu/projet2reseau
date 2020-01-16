@@ -1,6 +1,7 @@
 @import "reset.css";
 
-body {font-family: 'Muli', sans-serif}
+body {font-family: 'Muli', sans-serif;}
+
 .wrap {max-width:1600px; width: 100%; margin: 0 auto;}
 
 

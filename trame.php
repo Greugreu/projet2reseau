@@ -84,6 +84,10 @@ if (is_logged()) {
     header('Location: 404.php');
 
     } ?>
+    <!-- Stat a faire :
+    Nb de connexion à la minute en splittant frame.time
+    Voir pour géoloc les @ip
+    Voir pour reconnaitre Netflix, Fb, etc...-->
     <script>
         console.log(<?=$tcp?>)
         var ctx = document.getElementById('myChart').getContext('2d');
