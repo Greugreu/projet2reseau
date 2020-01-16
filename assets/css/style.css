@@ -1,6 +1,6 @@
 @import "reset.css";
 
-body {font-family: 'Muli', sans-serif; background: radial-gradient(grey, black)}
+body {font-family: 'Muli', sans-serif}
 .wrap {max-width:1600px; width: 100%; margin: 0 auto;}
 
 
@@ -55,7 +55,7 @@ text-decoration:none;}
 
 /*Page 404 */
 .wrap404 {max-width: 600px;width: 100%;margin: 0 auto;}
-#body {background: #262626;}
+#body {background-color: #262626;}
 #body h2 {text-align: center; color: #fff; font-size: 10em;margin-top: 250px;}
 #body p {text-align: center;color: #fff;margin-top: 20px;}
 #body img {margin-top: 30px;}
@@ -108,13 +108,11 @@ text-decoration:none;}
 .phone {
     width: 50%;
     float: left;
-    margin-bottom: 75px;
 }
 
-.mail {
+.mail2 {
     width: 50%;
     float: left;
-    margin-bottom: 75px;
 }
 
 .tel {
@@ -132,7 +130,7 @@ text-decoration:none;}
 .contact_title {
     text-align: center;
     text-transform: uppercase;
-    margin-top: 150px;
+    padding-top: 150px;
     font-size: 2em;
     color: white;
 }
@@ -228,7 +226,7 @@ form {
     border-color: darkgrey;
     border-radius: 10px;
     font-size: 1em;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     background-color: white;
     cursor: pointer;
     color: black;
@@ -240,7 +238,11 @@ form {
     color: red;
 }
 
-
+#background {
+    background: radial-gradient(grey, black);
+    width: 100%;
+    height: 800px;
+}
 
 /* footer */
 
@@ -250,7 +252,7 @@ footer {
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0);
     text-align: center;
 }
 
@@ -269,7 +271,9 @@ footer ul li {
     margin-right: 50px;
 }
 
-footer a:hover {color: lightslategrey}
+footer a:hover {
+    color: lightslategrey
+}
 
 
 

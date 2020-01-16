@@ -31,6 +31,7 @@ if (!empty($_POST['submitted'])) {
 
 require_once ("inc/header.php");?>
 
+<section id="background">
 <h1 class="contact_title">Contactez-nous !</h1>
 <div class="barre"></div>
 <div class="wrap3">
@@ -55,12 +56,11 @@ require_once ("inc/header.php");?>
             <i class="material-icons">&#xe325;</i>
             <p class="tel">06.35.48.62.46</p>
         </div>
-        <div class="mail">
+        <div class="mail2">
             <i class="material-icons">&#xe0be;</i>
             <p class="email">dcrypt@gmail.com</p>
         </div>
     </div>
-
-
-
+</div>
+</section>
 <?php require_once("inc/footer.php");?>
