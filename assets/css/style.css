@@ -444,6 +444,11 @@ form {
     color: black;
 }
 
+#submit_log:hover {
+    background-color: #525252;
+    color: white;
+}
+
 .forgot {
     margin-left: 38.5%;
     margin-top: 7px;
@@ -451,13 +456,11 @@ form {
 
 #forgot_link:hover {
     color: lightslategrey;
-    text-decoration: underline;
 }
 
 #forgot_link {
     color: white;
     text-decoration: none;
-    font-style: italic;
 }
 
 #background3 {
