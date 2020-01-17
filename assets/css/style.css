@@ -503,8 +503,65 @@ footer a:hover {
 /* Mentions legales */
 
 .mldef {
-    margin-top: 135px;
-    font-size: 1em;
+    padding-top: 135px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: underline;
+    margin-left: 75px;
+}
+
+.ml_title {
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: white;
+    margin-left: 45px;
+}
+
+.ml_undertitle {
+    font-size: 1.2em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: underline;
+    margin-left: 75px;
+
+}
+
+.ml_para {
+    line-height: 20px;
+    color: white;
+    margin-left: 20px;
+
+}
+
+.ml_end {
+    margin-bottom: 25px;
+}
+
+b {
+    font-weight: bold ;
+}
+
+.ml_link {
+    text-decoration: none;
+    color: white;
+}
+
+.ml_list {
+    color: white;
+}
+
+#background4 {
+    background: radial-gradient(grey, black 110%);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.countheads {
+    padding-top: 135px;
 }
 
 
