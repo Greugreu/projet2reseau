@@ -1,19 +1,15 @@
 <?php
 session_start();
-$fichier = file_get_contents('capture.json');
 
-$json = json_decode($fichier, true);
-//    echo "<pre>";
-//    var_dump($json[0]);
-//    echo "</pre>";
-
-//$ipAddrSrc = $json[0]['_source']['layers']['ip']['ip.src'];
-//echo "<br>" . $ipAddrSrc;
-
-
-require_once("inc/header.php");
 require("function/functions.php");
 if (is_logged()) {
+    require_once("inc/header.php");
+
+
+    $fichier = file_get_contents('capture.json');
+
+    $json = json_decode($fichier, true);
+
 ?>
 
     <canvas id="myChart"></canvas>
@@ -79,11 +75,7 @@ if (is_logged()) {
         ?>
         </tbody>
     </table>
-    <?php } else {
 
-    header('Location: 404.php');
-
-    } ?>
     <!-- Stat a faire :
     Nb de connexion à la minute en splittant frame.time
     Voir pour géoloc les @ip
@@ -94,7 +86,6 @@ if (is_logged()) {
         var chart = new Chart(ctx, {
             // The type of chart we want to create
             type: 'pie',
-
             // The data for our dataset
             data: {
                 labels: ['TCP', 'UDP'],
@@ -109,9 +100,12 @@ if (is_logged()) {
                     data: [<?=$tcp?>, <?=$udp;?>]
                 }]
             },
-
             // Configuration options go here
             options: {}
         });
     </script>
 <?php require_once("inc/footer.php");
+} else {
+    header('Location: 404.php');
+
+}
