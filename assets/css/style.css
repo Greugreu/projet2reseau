@@ -65,24 +65,28 @@ text-decoration:none;}
 
 .login {margin-top: 150px;}
 
-#table{
+#table {
     border-collapse: collapse;
     max-width: 95%;
     text-align: center;
     margin-top: 50px;
     margin-left: 2.5%;
 }
+
 #table th, #table td {
     border: 1px solid #dddddd;
     padding: 10px 5px;
 }
-#table  tr:nth-child(even){
+
+#table  tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-#table tr:hover{
+
+#table tr:hover {
     background-color: #dddddd;
 }
-#table th{
+
+#table th {
     background-color: royalblue;
     color: #dddddd;
 }
@@ -90,11 +94,140 @@ text-decoration:none;}
 
 /* Graphique */
 
-#myChart {margin-top: 120px;}
+#myChart {
+    margin-top: 120px;
+}
 
 /*Form Inscription */
 
-#form-inscription {margin-top: 150px;}
+.signup_title {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+
+.signup {
+    margin-left: 37.5%;
+    margin-top: 30px;
+}
+
+#surname {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: black;
+    width: 40%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    color: black;
+}
+
+#name {
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: black;
+    width: 40%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    color: black;
+}
+
+#mail {
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: black;
+    width: 40%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    color: black;
+}
+
+
+
+#password {
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: black;
+    width: 40%;
+    padding-left: 2%;
+    font-size: 1em;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    color: black;
+}
+
+#cfrmPassword {
+    margin-top: 15px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 5px;
+    width: 40%;
+    padding-left: 2%;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    font-size: 1em;
+}
+
+#surname:hover {
+    border-color: red;
+}
+
+#name:hover {
+    border-color: red;
+}
+
+#mail:hover {
+    border-color: red;
+}
+
+#password:hover {
+    border-color: red;
+}
+
+#cfrmPassword:hover {
+    border-color: red;
+}
+
+.need {
+    margin-top: 10px;
+    margin-left: 5px;
+    color: white;
+}
+
+#submit_signup {
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 6%;
+    padding: 10px 80px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-bottom: 50px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+
+#submit_signup:hover {
+    background-color: #525252;
+    color: white;
+}
+
+#background2 {
+    background: radial-gradient(grey, black);
+    width: 100%;
+    height: 600px;
+}
 
 
 /* contact */
@@ -130,7 +263,6 @@ text-decoration:none;}
 
 .contact_title {
     text-align: center;
-    text-transform: uppercase;
     padding-top: 150px;
     font-size: 2em;
     color: white;
@@ -160,9 +292,9 @@ text-decoration:none;}
 
 #object {
     margin-top: 15px;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 5px;
-    border-color: darkgrey;
+    border-color: black;
     width: 44%;
     padding-left: 2%;
     font-size: 1em;
@@ -172,8 +304,8 @@ text-decoration:none;}
 }
 
 #email {
-    border: 2px solid;
-    border-color: darkgrey;
+    border: 1px solid;
+    border-color: black;
     border-radius: 5px;
     width: 44%;
     padding-left: 2%;
@@ -187,8 +319,8 @@ text-decoration:none;}
 #message {
     margin-top: 15px;
     padding-bottom: 65px;
-    border: 2px solid;
-    border-color: darkgrey;
+    border: 1px solid;
+    border-color: black;
     border-radius: 5px;
     width: 44%;
     padding-left: 2%;
@@ -223,8 +355,8 @@ form {
     margin-top: 25px;
     margin-left: 6%;
     padding: 10px 80px;
-    border: 2px solid;
-    border-color: darkgrey;
+    border: 1px solid;
+    border-color: black;
     border-radius: 10px;
     font-size: 1em;
     margin-bottom: 50px;
@@ -233,13 +365,18 @@ form {
     color: black;
 }
 
+#submit_contact:hover {
+    background-color: #525252;
+    color: white;
+}
+
 .error {
     margin-left: 2%;
     margin-top: 5px;
     color: red;
 }
 
-#background {
+#background1 {
     background: radial-gradient(grey, black);
     width: 100%;
     height: 800px;

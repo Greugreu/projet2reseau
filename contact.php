@@ -31,7 +31,7 @@ if (!empty($_POST['submitted'])) {
 
 require_once ("inc/header.php");?>
 
-<section id="background">
+<section id="background1">
 <h1 class="contact_title">Contactez-nous !</h1>
 <div class="barre"></div>
 <div class="wrap3">

@@ -82,7 +82,7 @@ function passwordValid($password, $err, $minl, $key)
         $lowercase = preg_match('@[a-z]@', $password);
         $number = preg_match('@[0-9]@', $password);
         if (!$lowercase || !$number) {
-            $err[$key] = 'Votre mot de passe doit contenir au moins une lettre et un chiffre';
+            $err[$key] = 'Votre mot de passe doit contenir au moins un chiffre';
         } elseif (mb_strlen($password) < $minl) {
             $err[$key] = 'Votre mot de passe doit faire un minimum de ' . $minl . ' caractères';
         }
