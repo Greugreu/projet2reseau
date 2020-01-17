@@ -8,7 +8,8 @@ require_once ('inc/header.php');
     <form action="#" method="post">
         <div class="login">
             <label for="mail"></label>
-            <input type="email" name="mail" id="mail" placeholder="Votre mail">
+            <input type="email" name="mail" id="mail" placeholder="Votre mail" value="<?php if (!empty
+            ($_POST['mail'])){echo $_POST['mail'];} ?>">
             <?php spanErr($errors, 'login'); ?>
         </div>
         <div class="password">

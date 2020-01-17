@@ -10,17 +10,20 @@ include 'inc/signup.inc.php';
     <form action="#" class="signup" method="post">
         <div class="surname">
             <label for="surname"></label>
-            <input type="text" name="surname" id="surname" placeholder="Votre nom">
+            <input type="text" name="surname" id="surname" placeholder="Votre nom" value="<?php if (!empty
+            ($_POST['surname'])){echo $_POST['surname'];} ?>">
             <?php spanErr($errors, 'surname'); ?>
         </div>
         <div class="name">
             <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="Votre prenom">
+            <input type="text" name="name" id="name" placeholder="Votre prenom" value="<?php if (!empty
+            ($_POST['name'])){echo $_POST['name'];} ?>">
             <?php spanErr($errors, 'name'); ?>
         </div>
         <div class="mail">
             <label for="mail"></label>
-            <input type="email" name="mail" id="mail" placeholder="Votre mail">
+            <input type="email" name="mail" id="mail" placeholder="Votre mail" <?php if (!empty
+            ($_POST['mail'])){echo $_POST['mail'];} ?>>
             <?php spanErr($errors, 'mail'); ?>
         </div>
         <div class="password">
