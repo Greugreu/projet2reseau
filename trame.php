@@ -2,17 +2,20 @@
 session_start();
 
 require("function/functions.php");
+require("function/debug.php");
 if (is_logged()) {
     require_once("inc/header.php");
 
 
-    $fichier = file_get_contents('capture.json');
+    $fichier = file_get_contents('capturemin.json');
 
     $json = json_decode($fichier, true);
+    //debug($json);
 
 ?>
 
-    <canvas id="myChart"></canvas>
+    <canvas id="chartProt"></canvas>
+    <canvas id="chartCountry"></canvas>
     <table id="table">
         <thead>
         <th>Date et heure</th>
@@ -30,6 +33,7 @@ if (is_logged()) {
         $nb = count($json);
         $udp = 0;
         $tcp = 0;
+        $tab = array();
 
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
@@ -42,6 +46,39 @@ if (is_logged()) {
             if (isset($row['ip'])) {
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => "https://freegeoip.app/json/" . $json[$i]['_source']['layers']['ip']['ip.dst'],
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                    CURLOPT_HTTPHEADER => array(
+                        "accept: application/json",
+                        "content-type: application/json"
+                    ),
+                ));
+
+                $response = curl_exec($curl);
+                $err = curl_error($curl);
+
+                $test = json_decode($response);
+
+
+                $countryName = $test->country_name;
+                $z = [
+                    'country_name' => $countryName
+                ];
+                if ($z['country_name']===""){
+                    unset($z['country_name']);
+                }else{
+                    $countryName = $z['country_name'];
+                    $tab[] .= $countryName;
+                }
             } else {
                 echo '<td></td>';
                 echo '<td></td>';
@@ -71,7 +108,18 @@ if (is_logged()) {
 
             echo '</tr>';
         }
+        $nbCountry = array_count_values($tab);
+        debug($nbCountry);
+        $labels = '';
+        $colors = '';
 
+        foreach ($nbCountry as $key => $nb) {
+            $color1 = rand(0, 255);
+            $color2 = rand(0, 255);
+            $color3 = rand(0, 255);
+            $labels .= "'" . $key . "',";
+            $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ") ,";
+        }
         ?>
         </tbody>
     </table>
@@ -81,9 +129,8 @@ if (is_logged()) {
     Voir pour géoloc les @ip
     Voir pour reconnaitre Netflix, Fb, etc...-->
     <script>
-        console.log(<?=$tcp?>)
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctx1 = document.getElementById('chartProt').getContext('2d');
+        var chart1 = new Chart(ctx1, {
             // The type of chart we want to create
             type: 'pie',
             // The data for our dataset
@@ -94,10 +141,29 @@ if (is_logged()) {
                     backgroundColor: [
                         'rgb(148, 68, 15)',
                         'rgb(0, 0, 0)'
-
                     ],
                     borderColor: 'rgb(255, 255, 255)',
                     data: [<?=$tcp?>, <?=$udp;?>]
+                }]
+            },
+            // Configuration options go here
+            options: {}
+        });
+
+        var ctx2 = document.getElementById('chartCountry').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            // The type of chart we want to create
+            type: 'polarArea',
+            // The data for our dataset
+            data: {
+                labels: [<?= $labels ?>],
+                datasets: [{
+                    label: 'Destination Country',
+                    backgroundColor: [
+                     <?= $colors ?>
+                    ],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: [<?=$nbCountry['United States'];?>,<?=$nbCountry['Ireland'];?>, <?=$nbCountry['United Kingdom'];?>]
                 }]
             },
             // Configuration options go here
