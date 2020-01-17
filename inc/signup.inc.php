@@ -30,8 +30,8 @@ if (!empty($_POST['submitted'])) {
 
     $errors = passwordValid($pwd, $errors, 6, 'password');
 
-    if (!empty($password)) {
-        if ($password != $cfrm) {
+    if (!empty($pwd)) {
+        if ($pwd !== $cfrm) {
             $errors['cfrmPassword'] = 'Les deux mots de passe ne correspondent pas';
         }
     }
