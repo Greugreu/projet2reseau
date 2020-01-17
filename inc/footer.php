@@ -5,7 +5,7 @@
         <ul>
             <li><a class="copyright" href="">Dcrypt © 2020</a></li>
             <li><a class="contact" href="">Contact</a></li>
-            <li><a class="ml" href="">Mentions légales</a></li>
+            <li><a class="ml" href="mentions-legales.php">Mentions légales</a></li>
             <li><a class="cgu" href="">CGU</a></li>
             <li><a class="who" href="">Qui sommes-nous ?</a></li>
         </ul>
