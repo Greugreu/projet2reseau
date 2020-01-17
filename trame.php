@@ -12,7 +12,7 @@ if (is_logged()) {
     $json = json_decode($fichier, true);
     //debug($json);
 
-?>
+    ?>
 
     <canvas id="chartProt"></canvas>
     <canvas id="chartCountry"></canvas>
@@ -38,8 +38,9 @@ if (is_logged()) {
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
             $row = $json[$i]['_source']['layers'];
-            if  (isset($row['frame'])){
-                echo '<td>' . $json[$i]['_source']['layers']['frame']['frame.time'] . '</td>';
+            if (isset($row['frame'])) {
+                $date = explode(".", $json[$i]['_source']['layers']['frame']['frame.time']);
+                echo '<td>' . $date[0] . '</td>';
             } else {
                 echo '<td></td>';
             }
@@ -73,9 +74,9 @@ if (is_logged()) {
                 $z = [
                     'country_name' => $countryName
                 ];
-                if ($z['country_name']===""){
+                if ($z['country_name'] === "") {
                     unset($z['country_name']);
-                }else{
+                } else {
                     $countryName = $z['country_name'];
                     $tab[] .= $countryName;
                 }
@@ -90,35 +91,36 @@ if (is_logged()) {
                 echo '<td></td>';
                 echo '<td></td>';
             }
-        if (isset($row['udp'])) {
+            if (isset($row['udp'])) {
                 echo '<td>UDP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
                 $udp++;
-            }else if (isset($row['tcp'])) {
+            } else if (isset($row['tcp'])) {
                 echo '<td>TCP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
                 $tcp++;
             } else {
-            echo '<td></td>';
-            echo '<td></td>';
-            echo '<td></td>';
-        }
+                echo '<td></td>';
+                echo '<td></td>';
+                echo '<td></td>';
+            }
 
             echo '</tr>';
         }
         $nbCountry = array_count_values($tab);
-        debug($nbCountry);
         $labels = '';
         $colors = '';
+        $val ='';
 
         foreach ($nbCountry as $key => $nb) {
             $color1 = rand(0, 255);
             $color2 = rand(0, 255);
             $color3 = rand(0, 255);
             $labels .= "'" . $key . "',";
-            $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ") ,";
+            $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
+            $val .=  $nbCountry[$key] . "," ;
         }
         ?>
         </tbody>
@@ -137,7 +139,7 @@ if (is_logged()) {
             data: {
                 labels: ['TCP', 'UDP'],
                 datasets: [{
-                    label: 'TCP / UDP',
+                    label: 'protocoles',
                     backgroundColor: [
                         'rgb(148, 68, 15)',
                         'rgb(0, 0, 0)'
@@ -147,30 +149,56 @@ if (is_logged()) {
                 }]
             },
             // Configuration options go here
-            options: {}
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: 'Protocole utilisé'
+                }
+            }
         });
 
         var ctx2 = document.getElementById('chartCountry').getContext('2d');
         var chart2 = new Chart(ctx2, {
             // The type of chart we want to create
-            type: 'polarArea',
+                type: 'horizontalBar',
             // The data for our dataset
             data: {
                 labels: [<?= $labels ?>],
                 datasets: [{
-                    label: 'Destination Country',
+                    label: 'IP destination country',
                     backgroundColor: [
-                     <?= $colors ?>
+                        <?= $colors ?>
                     ],
                     borderColor: 'rgb(255, 255, 255)',
-                    data: [<?=$nbCountry['United States'];?>,<?=$nbCountry['Ireland'];?>, <?=$nbCountry['United Kingdom'];?>]
+                    data: [<?=$val?>]
                 }]
             },
             // Configuration options go here
-            options: {}
+            options: {
+                display: 'auto',
+                minBarLength: 0,
+                scaleStartValue:0,
+                scalesStepWidth: 100,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            step: 1
+                        }
+                    }]
+
+                },
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: 'Nombre de communication par pays'
+                }
+            }
         });
     </script>
-<?php require_once("inc/footer.php");
+    <?php require_once("inc/footer.php");
 } else {
     header('Location: 404.php');
 
