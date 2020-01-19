@@ -36,7 +36,7 @@
                         <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li><a href="#">Redirection</a></li>
+                        <li><a href="index.php">Accueil</a></li>
                         <li><a href="#">Redirection</a></li>
                         <li><a href="#">Redirection</a></li>
                         <li><a href="contact.php">Contact</a></li>
@@ -52,10 +52,10 @@
                                 <span></span>
                                 <span></span>
                                 <ul id="menu">
-                                    <a href="#">
-                                        <li>Home</li>
+                                    <a href="index.php">
+                                        <li>Accueil</li>
                                     </a>
-                                    <a href="#">
+                                    <a href="">
                                         <li>About</li>
                                     </a>
                                     <a href="#">

@@ -2,13 +2,15 @@
 
 <section id="background4">
 
+    <h1 class="countheads_ml">Mentions légales :</h1>
+
     <h2 class="mldef">Définitions :</h2>
 
 
     <p class="ml_para"><b>Client : </b>tout professionnel ou personne physique capable au sens des articles 1123 et
         suivants
         du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>
-        <b>Prestations et Services:</b>  <a class="ml_link" href="http://localhost/projet2reseau/index.php"> 
+        <b>Prestations et Services:</b>  <a class="ml_link" href="http://localhost/projet2reseau/index.php">
             http://localhost/projet2reseau/index.php</a>
         met à disposition des Clients:</p>
 

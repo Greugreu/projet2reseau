@@ -539,6 +539,18 @@ body {
     color: black;
 }
 
+#email:hover {
+    border-color: red;
+}
+
+#object:hover {
+    border-color: red;
+}
+
+#message:hover {
+    border-color: red;
+}
+
 input::placeholder {
     font-family: 'Muli', sans-serif;
     opacity: 1;
@@ -713,8 +725,16 @@ footer a:hover {
 
 /* Mentions legales */
 
-.mldef {
+.countheads_ml {
     padding-top: 135px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    color: white;
+}
+
+.mldef {
+    padding-top: 35px;
     font-size: 1.2em;
     margin-bottom: 10px;
     color: white;
@@ -771,9 +791,66 @@ b {
     padding-bottom: 10px;
 }
 
-.countheads {
-    padding-top: 135px;
+/* CGU */
+
+#background5 {
+    background: radial-gradient(grey, black 110%);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
 }
+
+.countheads_cgu {
+    padding-top: 135px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    color: white;
+}
+
+.cgu_title {
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: white;
+    margin-left: 25px;
+}
+
+.nocount {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    color: white;
+}
+
+u {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+}
+
+.para_cgu {
+    margin-left: 10px;
+    line-height: 20px;
+    color: white;
+}
+
+.cgu_end {
+    margin-bottom: 20px;
+}
+
+.list_cgu {
+    margin-bottom: 4px;
+    margin-top: 8px;
+    margin-left: 30px;
+    color: white;
+}
+
+.list_cgu li {
+    margin-bottom: 4px;
+}
+
+
 
 
 

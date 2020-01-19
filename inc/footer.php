@@ -3,11 +3,11 @@
 
     <nav>
         <ul>
-            <li><a class="copyright" href="">Dcrypt © 2020</a></li>
-            <li><a class="contact" href="">Contact</a></li>
+            <li><a class="copyright" href="index.php">Dcrypt © 2020</a></li>
+            <li><a class="contact" href="contact.php">Contact</a></li>
             <li><a class="ml" href="mentions-legales.php">Mentions légales</a></li>
             <li><a class="cgu" href="cgu.php">CGU</a></li>
-            <li><a class="who" href="">Qui sommes-nous ?</a></li>
+            <li><a class="who" href="who.php">Qui sommes-nous ?</a></li>
         </ul>
     </nav>
     <div class="nav_footer"></div>
