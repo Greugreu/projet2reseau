@@ -26,7 +26,7 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
-                <li><a href="signup.php">Inscription</a></li>
+                <li><a href="#">Redirection</a></li>
             </ul>
             <div class="connected">
                 <a class="connect" href="deconnexion.php">Deconnexion</a>
@@ -55,7 +55,7 @@
                                     <a href="index.php">
                                         <li>Accueil</li>
                                     </a>
-                                    <a href="">
+                                    <a href="#">
                                         <li>About</li>
                                     </a>
                                     <a href="#">
