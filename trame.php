@@ -1,22 +1,21 @@
 <?php
 session_start();
-$fichier = file_get_contents('capture.json');
 
-$json = json_decode($fichier, true);
-//    echo "<pre>";
-//    var_dump($json[0]);
-//    echo "</pre>";
-
-//$ipAddrSrc = $json[0]['_source']['layers']['ip']['ip.src'];
-//echo "<br>" . $ipAddrSrc;
-
-
-require_once("inc/header.php");
 require("function/functions.php");
+require("function/debug.php");
 if (is_logged()) {
-?>
+    require_once("inc/header.php");
 
-    <canvas id="myChart"></canvas>
+
+    $fichier = file_get_contents('capturemin.json');
+
+    $json = json_decode($fichier, true);
+    //debug($json);
+
+    ?>
+
+    <canvas id="chartProt"></canvas>
+    <canvas id="chartCountry"></canvas>
     <table id="table">
         <thead>
         <th>Date et heure</th>
@@ -34,18 +33,53 @@ if (is_logged()) {
         $nb = count($json);
         $udp = 0;
         $tcp = 0;
+        $tab = array();
 
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
             $row = $json[$i]['_source']['layers'];
-            if  (isset($row['frame'])){
-                echo '<td>' . $json[$i]['_source']['layers']['frame']['frame.time'] . '</td>';
+            if (isset($row['frame'])) {
+                $date = explode(".", $json[$i]['_source']['layers']['frame']['frame.time']);
+                echo '<td>' . $date[0] . '</td>';
             } else {
                 echo '<td></td>';
             }
             if (isset($row['ip'])) {
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => "https://freegeoip.app/json/" . $json[$i]['_source']['layers']['ip']['ip.dst'],
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                    CURLOPT_HTTPHEADER => array(
+                        "accept: application/json",
+                        "content-type: application/json"
+                    ),
+                ));
+
+                $response = curl_exec($curl);
+                $err = curl_error($curl);
+
+                $test = json_decode($response);
+
+
+                $countryName = $test->country_name;
+                $z = [
+                    'country_name' => $countryName
+                ];
+                if ($z['country_name'] === "") {
+                    unset($z['country_name']);
+                } else {
+                    $countryName = $z['country_name'];
+                    $tab[] .= $countryName;
+                }
             } else {
                 echo '<td></td>';
                 echo '<td></td>';
@@ -57,57 +91,115 @@ if (is_logged()) {
                 echo '<td></td>';
                 echo '<td></td>';
             }
-        if (isset($row['udp'])) {
+            if (isset($row['udp'])) {
                 echo '<td>UDP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
                 $udp++;
-            }else if (isset($row['tcp'])) {
+            } else if (isset($row['tcp'])) {
                 echo '<td>TCP</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
                 echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
                 $tcp++;
             } else {
-            echo '<td></td>';
-            echo '<td></td>';
-            echo '<td></td>';
-        }
+                echo '<td></td>';
+                echo '<td></td>';
+                echo '<td></td>';
+            }
 
             echo '</tr>';
         }
+        $nbCountry = array_count_values($tab);
+        $labels = '';
+        $colors = '';
+        $val ='';
 
+        foreach ($nbCountry as $key => $nb) {
+            $color1 = rand(0, 255);
+            $color2 = rand(0, 255);
+            $color3 = rand(0, 255);
+            $labels .= "'" . $key . "',";
+            $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
+            $val .=  $nbCountry[$key] . "," ;
+        }
         ?>
         </tbody>
     </table>
-    <?php } else {
 
-    header('Location: 404.php');
-
-    } ?>
+    <!-- Stat a faire :
+    Nb de connexion à la minute en splittant frame.time
+    Voir pour géoloc les @ip
+    Voir pour reconnaitre Netflix, Fb, etc...-->
     <script>
-        console.log(<?=$tcp?>)
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctx1 = document.getElementById('chartProt').getContext('2d');
+        var chart1 = new Chart(ctx1, {
             // The type of chart we want to create
             type: 'pie',
-
             // The data for our dataset
             data: {
                 labels: ['TCP', 'UDP'],
                 datasets: [{
-                    label: 'TCP / UDP',
+                    label: 'protocoles',
                     backgroundColor: [
                         'rgb(148, 68, 15)',
                         'rgb(0, 0, 0)'
-
                     ],
                     borderColor: 'rgb(255, 255, 255)',
                     data: [<?=$tcp?>, <?=$udp;?>]
                 }]
             },
-
             // Configuration options go here
-            options: {}
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: 'Protocole utilisé'
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById('chartCountry').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            // The type of chart we want to create
+                type: 'horizontalBar',
+            // The data for our dataset
+            data: {
+                labels: [<?= $labels ?>],
+                datasets: [{
+                    label: 'IP destination country',
+                    backgroundColor: [
+                        <?= $colors ?>
+                    ],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: [<?=$val?>]
+                }]
+            },
+            // Configuration options go here
+            options: {
+                display: 'auto',
+                minBarLength: 0,
+                scaleStartValue:0,
+                scalesStepWidth: 100,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            step: 1
+                        }
+                    }]
+
+                },
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: 'Nombre de communication par pays'
+                }
+            }
         });
     </script>
-<?php require_once("inc/footer.php");
+    <?php require_once("inc/footer.php");
+} else {
+    header('Location: 404.php');
+
+}

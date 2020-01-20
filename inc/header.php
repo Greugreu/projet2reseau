@@ -26,7 +26,7 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
-                <li><a href="#">Redirection</a></li>
+                <li><a href="../signup.php">Inscription</a></li>
             </ul>
             <div class="connected">
                 <a class="connect" href="deconnexion.php">Deconnexion</a>
@@ -36,11 +36,11 @@
                         <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li><a href="#">Redirection</a></li>
+                        <li><a href="index.php">Accueil</a></li>
                         <li><a href="#">Redirection</a></li>
                         <li><a href="#">Redirection</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <li><a href="../signup.php">Inscription</a></li>
+                        <li><a href="signup.php">Inscription</a></li>
                     </ul>
                     <div class="connected">
                         <a class="connect" href="login.php">Connexion</a>
@@ -52,8 +52,8 @@
                                 <span></span>
                                 <span></span>
                                 <ul id="menu">
-                                    <a href="#">
-                                        <li>Home</li>
+                                    <a href="index.php">
+                                        <li>Accueil</li>
                                     </a>
                                     <a href="#">
                                         <li>About</li>

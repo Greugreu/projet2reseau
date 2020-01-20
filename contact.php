@@ -2,35 +2,11 @@
 
 include('function/functions.php');
 include('inc/pdo.php');
+require_once ("inc/header.php");
+include 'inc/contact.inc.php';
+?>
 
-
-
-$errors = array();
-$success = false;
-
-if (!empty($_POST['submitted'])) {
-    $email = clean($_POST['email']);
-    $object = clean($_POST['object']);
-    $text = clean($_POST['message']);
-
-    $errors = textValid($errors, $text, 5, 20, 'message');
-    $errors = objectValid($errors, $object, 2, 50, 'object');
-    $errors = emailValid($errors, $email, 'email');
-
-    if(count($errors) === 0) {
-        $sql = "INSERT INTO contact VALUES (NULL, :contactMail, :contactObjet, :contactMessage, NOW())";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':contactMail',   $email,PDO::PARAM_STR);
-        $query->bindValue(':contactObjet', $object, PDO::PARAM_STR);
-        $query->bindValue(':contactMessage', $text,PDO::PARAM_STR);
-        $query->execute();
-        $success = true;
-    }
-}
-
-
-require_once ("inc/header.php");?>
-
+<section id="background1">
 <h1 class="contact_title">Contactez-nous !</h1>
 <div class="barre"></div>
 <div class="wrap3">
@@ -55,12 +31,13 @@ require_once ("inc/header.php");?>
             <i class="material-icons">&#xe325;</i>
             <p class="tel">06.35.48.62.46</p>
         </div>
-        <div class="mail">
+        <div class="mail2">
             <i class="material-icons">&#xe0be;</i>
             <p class="email">dcrypt@gmail.com</p>
         </div>
     </div>
+</div>
+</section>
 
-
-
-<?php require_once("inc/footer.php");?>
+<?php
+require_once("inc/footer.php");
