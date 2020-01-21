@@ -52,7 +52,16 @@
             <span>Utilisateurs</span></a>
         </li>
 
-        <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+        <li class="nav-item">
+              <a class="nav-link" href="admin_contact.php">
+                  <i class="fas fa-users-cog"></i>
+                  <span>Contact</span></a>
+        </li>
+
+
+          <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Sidebar Toggler (Sidebar) -->
@@ -71,7 +80,7 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <h1>Administration utilisateurs</h1>
+            <h1>Administration</h1>
 
             <div id="content-wrapper">
               <div class="container-fluid">

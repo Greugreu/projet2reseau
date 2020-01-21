@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require ("inc/pdo.php");
 require ("../function/functions.php");
 
@@ -7,7 +7,7 @@ $errors = array();
 $success = false;
 
 if (!empty($_POST['submitted'])) {
-    //XSS
+
     $name = clean($_POST['name']);
     $surname = clean($_POST['surname']);
     $mail = clean($_POST['mail']);
@@ -60,26 +60,33 @@ if (!empty($_POST['submitted'])) {
 
 }
 
-include "admin_header.php";?>
+include "admin_header.php";
+if (is_admin()) { ?>
 
 <div id="form-inscription" class="form">
     <form action="#" class="signup" method="post">
         <div class="surname">
             <label for="surname"></label>
             <input type="text" name="surname" id="surname" placeholder="Votre nom*" value="<?php if (!empty
-            ($_POST['surname'])){echo $_POST['surname'];} ?>">
+            ($_POST['surname'])) {
+                echo $_POST['surname'];
+            } ?>">
             <?php spanErr($errors, 'surname'); ?>
         </div>
         <div class="name">
             <label for="name"></label>
             <input type="text" name="name" id="name" placeholder="Votre prenom*" value="<?php if (!empty
-            ($_POST['name'])){echo $_POST['name'];} ?>">
+            ($_POST['name'])) {
+                echo $_POST['name'];
+            } ?>">
             <?php spanErr($errors, 'name'); ?>
         </div>
         <div class="mail">
             <label for="mail"></label>
             <input type="email" name="mail" id="mail" placeholder="Votre mail*" <?php if (!empty
-            ($_POST['mail'])){echo $_POST['mail'];} ?>>
+            ($_POST['mail'])) {
+                echo $_POST['mail'];
+            } ?>>
             <?php spanErr($errors, 'mail'); ?>
         </div>
         <div class="password">
@@ -96,4 +103,7 @@ include "admin_header.php";?>
         <input id="submit_signup" type="submit" name="submitted" value="Envoyer">
     </form>
 
-<?php include "admin_footer.php"; ?>
+    <?php include "admin_footer.php";
+    } else {
+    header('Location: ../403.php');
+    }

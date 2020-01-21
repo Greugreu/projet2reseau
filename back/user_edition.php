@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require ("inc/pdo.php");
 require ("../function/functions.php");
 
@@ -45,25 +45,35 @@ if (!empty($_POST['submitted'])) {
   }
 }
 
-require_once ("admin_header.php");?>
+require_once ("admin_header.php");
+if (is_admin()) { ?>
 
     <form action="#" class="usermodified" method="post">
         <div class="surname">
             <label for="surname"></label>
-            <input type="text" name="surname" id="surname"  value="<?php echo $user['name']; if (!empty
-            ($_POST['surname'])){echo $_POST['surname'];} ?>">
+            <input type="text" name="surname" id="surname" value="<?php echo $user['name'];
+            if (!empty
+            ($_POST['surname'])) {
+                echo $_POST['surname'];
+            } ?>">
             <?php spanErr($errors, 'surname'); ?>
         </div>
         <div class="name">
             <label for="name"></label>
-            <input type="text" name="name" id="name"  value="<?php echo $user['surname']; if (!empty
-            ($_POST['name'])){echo $_POST['name'];} ?>">
+            <input type="text" name="name" id="name" value="<?php echo $user['surname'];
+            if (!empty
+            ($_POST['name'])) {
+                echo $_POST['name'];
+            } ?>">
             <?php spanErr($errors, 'name'); ?>
         </div>
         <div class="mail">
             <label for="mail"></label>
-            <input type="text" name="mail" id="mail"  value="<?php echo $user['mail']; if (!empty
-            ($_POST['mail'])){echo $_POST['mail'];} ?>">
+            <input type="text" name="mail" id="mail" value="<?php echo $user['mail'];
+            if (!empty
+            ($_POST['mail'])) {
+                echo $_POST['mail'];
+            } ?>">
             <?php spanErr($errors, 'mail'); ?>
         </div>
         <div class="password">
@@ -87,4 +97,8 @@ require_once ("admin_header.php");?>
         <input id="submit_edition" type="submit" name="submitted" value="Envoyer">
     </form>
 
-<?php require_once ("admin_footer.php");
+    <?php require_once("admin_footer.php");
+} else {
+    header('Location: ../403.php');
+}
+
