@@ -25,7 +25,7 @@ require_once ('inc/header.php');
     <div class="engagements">
     <ul>
         <li id="p1">Un traitement de vos données rapide et efficace, avec les déstinations des connexions sortantes.</li>
-        <li id="p2">Vous perrmet de savoir ce qui se passe sur votre réseau.</li>
+        <li id="p2">Vous permet de savoir ce qui se passe sur votre réseau.</li>
         <li id="p3">Le traitement sera executé en toute sécurité, vos données restent privées.</li>
     </ul>
     </div>
