@@ -3,14 +3,15 @@ session_start();
 
 require("function/functions.php");
 require("function/debug.php");
-if (is_logged()) {
+/*if (is_logged()) {*/
     require_once("inc/header.php");
 
-
     $fichier = file_get_contents('capturemin.json');
-
+    debug($fichier);
     $json = json_decode($fichier, true);
     //debug($json);
+    debug($json);
+
 
     ?>
 
@@ -239,7 +240,7 @@ if (is_logged()) {
         });
     </script>
     <?php require_once("inc/footer.php");
-} else {
+/*} else {
     header('Location: 404.php');
 
-}
+}*/
