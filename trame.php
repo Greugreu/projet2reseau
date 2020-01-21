@@ -15,9 +15,10 @@ if (is_logged()) {
     ?>
 
     <canvas id="chartProt"></canvas>
-    <canvas id="chartCountry"></canvas>
     <canvas id="chartMachine"></canvas>
-<!--    --><?php
+    <canvas id="chartCountry"></canvas>
+
+    <!--    --><?php
 //    $testDate = explode(".", $json[1]['_source']['layers']['frame']['frame.time']);
 //    echo $testDate[0].'<br>';
 //    echo strtotime($testDate[0]);?>
@@ -116,10 +117,10 @@ if (is_logged()) {
             }
 
             echo '</tr>';
-            if (isset($row['eth']['eth.src_tree'])){
-                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc."){
+            if (isset($row['eth']['eth.src_tree'])) {
+                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc.") {
                     $apple++;
-                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate"){
+                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate") {
                     $intel++;
                 } else {
                     $autre++;
@@ -129,7 +130,7 @@ if (is_logged()) {
         $nbCountry = array_count_values($tab);
         $labels = '';
         $colors = '';
-        $val ='';
+        $val = '';
 
         foreach ($nbCountry as $key => $nb) {
             $color1 = rand(0, 255);
@@ -137,7 +138,7 @@ if (is_logged()) {
             $color3 = rand(0, 255);
             $labels .= "'" . $key . "',";
             $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
-            $val .=  $nbCountry[$key] . "," ;
+            $val .= $nbCountry[$key] . ",";
         }
         ?>
         </tbody>
@@ -178,7 +179,7 @@ if (is_logged()) {
         var ctx2 = document.getElementById('chartCountry').getContext('2d');
         var chart2 = new Chart(ctx2, {
             // The type of chart we want to create
-                type: 'horizontalBar',
+            type: 'horizontalBar',
             // The data for our dataset
             data: {
                 labels: [<?= $labels ?>],
@@ -195,7 +196,7 @@ if (is_logged()) {
             options: {
                 display: 'auto',
                 minBarLength: 0,
-                scaleStartValue:0,
+                scaleStartValue: 0,
                 scalesStepWidth: 100,
                 scales: {
                     xAxes: [{
@@ -235,6 +236,10 @@ if (is_logged()) {
             },
             // Configuration options go here
             options: {
+                title: {
+                    display: true,
+                    text: 'Marque carte réseau'
+                }
             }
         });
     </script>
