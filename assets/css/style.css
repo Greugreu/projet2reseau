@@ -238,7 +238,44 @@ body {
     color: rgba(0, 0, 0, 100);
 }
 
+#section2 {
+    background: radial-gradient(grey, black);
+}
+
+.wrapSection2{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+#section2 .img {
+    width: 100%;
+}
+.img img{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 6%;
+    width: 25%;
+    border-radius: 100%;
+    float: left;
+}
+
+#section2 h2 {
+    text-align: center;
+    color: white;
+    padding-bottom: 40px;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+#section2 .engagements ul {
+    padding-bottom: 30px;
+}
+#section2 .engagements ul li  {
+    text-align: center;
+    color: white;
+    line-height: 30px;
+}
 /*Page 404 */
+
 .wrap404 {
     max-width: 600px;
     width: 100%;
@@ -757,7 +794,7 @@ footer {
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0,1);
     text-align: center;
 }
 

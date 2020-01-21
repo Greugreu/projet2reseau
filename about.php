@@ -1,4 +1,6 @@
-<?php require_once ("inc/header.php"); ?>
+<?php
+session_start();
+require_once ("inc/header.php"); ?>
 
 <h1 class="about-title">Qui sommes-nous ?</h1>
     <div class="barre"></div>
@@ -17,7 +19,7 @@
 <h2 class="team">Notre équipe :</h2>
 <div class="barre"></div>
 
-    <div equipe>
+    <div>
         <div class="photo">
             <img src="assets/img/alex.jpg" alt="Chef de projet">
             <p class="name name1">Alexandre Courbois</p>
