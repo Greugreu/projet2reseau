@@ -286,6 +286,10 @@ body {
     background-color: #262626;
 }
 
+#body a {
+    text-decoration: none;
+}
+
 #body h2 {
     text-align: center;
     color: #fff;

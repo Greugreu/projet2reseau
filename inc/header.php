@@ -27,7 +27,7 @@
                 <li><a href="trame.php">Lecture trame</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <?php if (is_admin()) { ?>
-                <li><a href="#">Administration</a></li>
+                <li><a href="back/admin.php">Administration</a></li>
                 <?php } else { ?>
                 <li><a href="#">Redirection</a></li>
                 <?php } ?>

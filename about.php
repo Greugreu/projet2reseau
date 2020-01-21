@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("function/functions.php");
 require_once ("inc/header.php"); ?>
 
 <h1 class="about-title">Qui sommes-nous ?</h1>
