@@ -130,6 +130,7 @@ fabric.properties
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
 .idea/
+.back/
 
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
@@ -173,3 +174,4 @@ pdo.php
 # End of https://www.gitignore.io/api/osx,linux,macos,windows,phpstorm+all
 /node_modules/
 /package-lock.json
+/back/
