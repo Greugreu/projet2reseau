@@ -16,6 +16,11 @@ if (is_logged()) {
 
     <canvas id="chartProt"></canvas>
     <canvas id="chartCountry"></canvas>
+    <canvas id="chartMachine"></canvas>
+<!--    --><?php
+//    $testDate = explode(".", $json[1]['_source']['layers']['frame']['frame.time']);
+//    echo $testDate[0].'<br>';
+//    echo strtotime($testDate[0]);?>
     <table id="table">
         <thead>
         <th>Date et heure</th>
@@ -34,6 +39,9 @@ if (is_logged()) {
         $udp = 0;
         $tcp = 0;
         $tab = array();
+        $intel = 0;
+        $apple = 0;
+        $autre = 0;
 
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
@@ -108,6 +116,15 @@ if (is_logged()) {
             }
 
             echo '</tr>';
+            if (isset($row['eth']['eth.src_tree'])){
+                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc."){
+                    $apple++;
+                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate"){
+                    $intel++;
+                } else {
+                    $autre++;
+                }
+            }
         }
         $nbCountry = array_count_values($tab);
         $labels = '';
@@ -195,6 +212,29 @@ if (is_logged()) {
                     display: true,
                     text: 'Nombre de communication par pays'
                 }
+            }
+        });
+
+        var ctx3 = document.getElementById('chartMachine').getContext('2d');
+        var chart3 = new Chart(ctx3, {
+            // The type of chart we want to create
+            type: 'polarArea',
+            // The data for our dataset
+            data: {
+                labels: ['Intel', 'Apple', 'Autres'],
+                datasets: [{
+                    label: 'machines',
+                    backgroundColor: [
+                        'rgb(0, 139, 139)',
+                        'rgb(178, 34, 34)',
+                        'rgb(255, 215, 0)'
+                    ],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: [<?=$intel?>, <?=$apple;?>, <?=$autre;?>]
+                }]
+            },
+            // Configuration options go here
+            options: {
             }
         });
     </script>
