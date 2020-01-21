@@ -16,7 +16,7 @@
 
 <div class="wrap">
     <header id="header">
-        <?php if (!empty($_SESSION)) { ?>
+        <?php if (is_logged()) { ?>
         <nav id="nav" class="nav">
             <div class="logo">
                 <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
@@ -26,7 +26,11 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <?php if (is_admin()) { ?>
+                <li><a href="#">Administration</a></li>
+                <?php } else { ?>
                 <li><a href="#">Redirection</a></li>
+                <?php } ?>
             </ul>
             <div class="connected">
                 <a class="connect" href="deconnexion.php">Deconnexion</a>

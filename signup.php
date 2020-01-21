@@ -1,6 +1,6 @@
 <?php
+require_once ('function/functions.php');
 include 'inc/header.php';
-include 'function/functions.php';
 include 'function/debug.php';
 include 'inc/pdo.php';
 include 'inc/signup.inc.php';
