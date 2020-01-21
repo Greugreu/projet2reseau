@@ -22,10 +22,10 @@
                 <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
             </div>
             <ul>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="#">Redirection</a></li>
-                <li><a href="#">Redirection</a></li>
-                <li><a href="contact.php">Contact</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a href="#">Redirection</a></li>
             </ul>
             <div class="connected">
@@ -38,7 +38,7 @@
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="#">Redirection</a></li>
-                        <li><a href="#">Redirection</a></li>
+                        <li><a href="about.php">About us</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="signup.php">Inscription</a></li>
                     </ul>
@@ -52,18 +52,11 @@
                                 <span></span>
                                 <span></span>
                                 <ul id="menu">
-                                    <a href="index.php">
-                                        <li>Accueil</li>
-                                    </a>
-                                    <a href="#">
-                                        <li>About</li>
-                                    </a>
-                                    <a href="#">
-                                        <li>Info</li>
-                                    </a>
-                                    <a href="contact.php">
-                                        <li>Contact</li>
-                                    </a>
+                                    <li><a href="index.php">Accueil</a></li>
+                                    <li><a href="#">Redirection</a></li>
+                                    <li><a href="about.php">About us</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
+                                    <li><a href="signup.php">Inscription</a></li>
                                 </ul>
                             </div>
                         </nav>
