@@ -116,6 +116,7 @@ function inputDate($err, $date, $key)
     }
     return $err;
 }
+
 function is_logged()
 {
     $roles = array('user', 'admin');
@@ -134,6 +135,7 @@ function is_logged()
     }
     return false;
 }
+
 
 function emailValid($err, $mail, $key) {
     if (!empty($mail)) {
