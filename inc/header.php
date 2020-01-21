@@ -27,9 +27,9 @@
                 <li><a href="trame.php">Lecture trame</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <?php if (is_admin()) { ?>
-                <li><a href="#">Administration</a></li>
+                <li><a href="back/admin.php">Administration</a></li>
                 <?php } else { ?>
-                <li><a href="#">Redirection</a></li>
+                <li><a href="travail.php">Objectifs</a></li>
                 <?php } ?>
             </ul>
             <div class="connected">
@@ -41,7 +41,7 @@
                     </div>
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
-                        <li><a href="#">Redirection</a></li>
+                        <li><a href="travail.php">objectifs</a></li>
                         <li><a href="about.php">About us</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="signup.php">Inscription</a></li>

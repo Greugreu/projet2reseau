@@ -5,13 +5,13 @@
 
 <body id="body">
 <div class="wrap404">
-<section>
+    <section>
 
-    <h2>404</h2>
-    <p>The page you were looking for could not be found</p>
-    <p><img src="assets/img/logo.png" alt="">
+        <a href="index.php"><h2>404</h2></a>
+        <a href="index.php"><p>The page you were looking for could not be found</p></a>
+        <p><a href="index.php"><img src="assets/img/logo.png" alt=""></a>
 
-</section>
+    </section>
 </div>
 </body>
 

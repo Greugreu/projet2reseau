@@ -16,9 +16,10 @@ require("function/debug.php");
     ?>
 
     <canvas id="chartProt"></canvas>
-    <canvas id="chartCountry"></canvas>
     <canvas id="chartMachine"></canvas>
-<!--    --><?php
+    <canvas id="chartCountry"></canvas>
+
+    <!--    --><?php
 //    $testDate = explode(".", $json[1]['_source']['layers']['frame']['frame.time']);
 //    echo $testDate[0].'<br>';
 //    echo strtotime($testDate[0]);?>
@@ -117,10 +118,10 @@ require("function/debug.php");
             }
 
             echo '</tr>';
-            if (isset($row['eth']['eth.src_tree'])){
-                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc."){
+            if (isset($row['eth']['eth.src_tree'])) {
+                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc.") {
                     $apple++;
-                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate"){
+                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate") {
                     $intel++;
                 } else {
                     $autre++;
@@ -130,7 +131,7 @@ require("function/debug.php");
         $nbCountry = array_count_values($tab);
         $labels = '';
         $colors = '';
-        $val ='';
+        $val = '';
 
         foreach ($nbCountry as $key => $nb) {
             $color1 = rand(0, 255);
@@ -138,7 +139,7 @@ require("function/debug.php");
             $color3 = rand(0, 255);
             $labels .= "'" . $key . "',";
             $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
-            $val .=  $nbCountry[$key] . "," ;
+            $val .= $nbCountry[$key] . ",";
         }
         ?>
         </tbody>
@@ -179,7 +180,7 @@ require("function/debug.php");
         var ctx2 = document.getElementById('chartCountry').getContext('2d');
         var chart2 = new Chart(ctx2, {
             // The type of chart we want to create
-                type: 'horizontalBar',
+            type: 'horizontalBar',
             // The data for our dataset
             data: {
                 labels: [<?= $labels ?>],
@@ -196,7 +197,7 @@ require("function/debug.php");
             options: {
                 display: 'auto',
                 minBarLength: 0,
-                scaleStartValue:0,
+                scaleStartValue: 0,
                 scalesStepWidth: 100,
                 scales: {
                     xAxes: [{
@@ -236,6 +237,10 @@ require("function/debug.php");
             },
             // Configuration options go here
             options: {
+                title: {
+                    display: true,
+                    text: 'Marque carte réseau'
+                }
             }
         });
     </script>
