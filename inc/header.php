@@ -61,13 +61,23 @@
                         <div class="mobile-container">
                             <div class="topnav">
                                 <div id="myLinks">
+                                    <?php if (is_logged()) {?>
                                     <a href="index.php">Accueil</a>
                                     <a href="about.php">About us</a>
                                     <a href="contact.php">Contact</a>
+                                    <a href="travail.php">Objectifs</a>
+                                    <?php if (is_admin()) { ?>
+                                    <a href="back/admin.php">Administration</a>
+                                    <?php } ?>
+                                    <a href="login.php">Deconnexion</a>
+                                    <?php } else { ?>
+                                    <a href="index.php">Accueil</a>
+                                    <a href="about.php">About us</a>
+                                    <a href="contact.php">Contact</a>
+                                    <a href="travail.php">Objectifs</a>
                                     <a href="signup.php">Inscription</a>
                                     <a href="login.php">Connexion</a>
-                                    <a href="back/admin.php">Administration</a>
-                                    <a href="travail.php">Objectifs</a>
+                                    <?php } ?>
                                 </div>
                                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                 <i class="fa fa-bars"></i>
