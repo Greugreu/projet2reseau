@@ -116,9 +116,12 @@ body {
         border-bottom-left-radius: 10px;
         width: 109%;
     }
-    #header nav ul li {
-        display: none;
-    }
+
+}
+@media screen and (max-width: 850px) {
+        #header nav ul li {
+            display: none;
+        }
 }
 
 
