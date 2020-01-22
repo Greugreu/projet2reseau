@@ -1,4 +1,7 @@
-<?php require_once ("inc/header.php"); ?>
+<?php
+session_start();
+require("function/functions.php");
+require_once ("inc/header.php"); ?>
 
 <section id="background6">
 
@@ -20,7 +23,7 @@
 <h2 class="team">Notre équipe :</h2>
 <div class="barre"></div>
 
-    <div equipe>
+    <div>
         <div class="photo">
             <img src="assets/img/alex.jpg" alt="Chef de projet">
             <p class="name name1">Alexandre Courbois</p>

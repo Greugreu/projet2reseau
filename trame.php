@@ -3,19 +3,26 @@ session_start();
 
 require("function/functions.php");
 require("function/debug.php");
-if (is_logged()) {
+/*if (is_logged()) {*/
     require_once("inc/header.php");
 
-
     $fichier = file_get_contents('capturemin.json');
-
+    debug($fichier);
     $json = json_decode($fichier, true);
     //debug($json);
+    debug($json);
+
 
     ?>
 
     <canvas id="chartProt"></canvas>
+    <canvas id="chartMachine"></canvas>
     <canvas id="chartCountry"></canvas>
+
+    <!--    --><?php
+//    $testDate = explode(".", $json[1]['_source']['layers']['frame']['frame.time']);
+//    echo $testDate[0].'<br>';
+//    echo strtotime($testDate[0]);?>
     <table id="table">
         <thead>
         <th>Date et heure</th>
@@ -34,6 +41,9 @@ if (is_logged()) {
         $udp = 0;
         $tcp = 0;
         $tab = array();
+        $intel = 0;
+        $apple = 0;
+        $autre = 0;
 
         for ($i = 0; $i < $nb; $i++) {
             echo '<tr>';
@@ -108,11 +118,20 @@ if (is_logged()) {
             }
 
             echo '</tr>';
+            if (isset($row['eth']['eth.src_tree'])) {
+                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc.") {
+                    $apple++;
+                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate") {
+                    $intel++;
+                } else {
+                    $autre++;
+                }
+            }
         }
         $nbCountry = array_count_values($tab);
         $labels = '';
         $colors = '';
-        $val ='';
+        $val = '';
 
         foreach ($nbCountry as $key => $nb) {
             $color1 = rand(0, 255);
@@ -120,7 +139,7 @@ if (is_logged()) {
             $color3 = rand(0, 255);
             $labels .= "'" . $key . "',";
             $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
-            $val .=  $nbCountry[$key] . "," ;
+            $val .= $nbCountry[$key] . ",";
         }
         ?>
         </tbody>
@@ -161,7 +180,7 @@ if (is_logged()) {
         var ctx2 = document.getElementById('chartCountry').getContext('2d');
         var chart2 = new Chart(ctx2, {
             // The type of chart we want to create
-                type: 'horizontalBar',
+            type: 'horizontalBar',
             // The data for our dataset
             data: {
                 labels: [<?= $labels ?>],
@@ -178,7 +197,7 @@ if (is_logged()) {
             options: {
                 display: 'auto',
                 minBarLength: 0,
-                scaleStartValue:0,
+                scaleStartValue: 0,
                 scalesStepWidth: 100,
                 scales: {
                     xAxes: [{
@@ -197,9 +216,36 @@ if (is_logged()) {
                 }
             }
         });
+
+        var ctx3 = document.getElementById('chartMachine').getContext('2d');
+        var chart3 = new Chart(ctx3, {
+            // The type of chart we want to create
+            type: 'polarArea',
+            // The data for our dataset
+            data: {
+                labels: ['Intel', 'Apple', 'Autres'],
+                datasets: [{
+                    label: 'machines',
+                    backgroundColor: [
+                        'rgb(0, 139, 139)',
+                        'rgb(178, 34, 34)',
+                        'rgb(255, 215, 0)'
+                    ],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: [<?=$intel?>, <?=$apple;?>, <?=$autre;?>]
+                }]
+            },
+            // Configuration options go here
+            options: {
+                title: {
+                    display: true,
+                    text: 'Marque carte réseau'
+                }
+            }
+        });
     </script>
     <?php require_once("inc/footer.php");
-} else {
+/*} else {
     header('Location: 404.php');
 
-}
+}*/

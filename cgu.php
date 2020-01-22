@@ -1,4 +1,7 @@
-<?php require_once ("inc/header.php") ?>
+<?php
+session_start();
+require("function/functions.php");
+require_once ("inc/header.php") ?>
 
 <section id="background5">
 

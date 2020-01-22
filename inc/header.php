@@ -50,16 +50,18 @@
                         <a class="connect" href="login.php">Connexion</a>
                         <?php } ?>
                         <nav role='navigation'>
-                            <div class="topnav">
-                                <a href="#home" class="active">Logo</a>
-                                <div id="myLinks">
-                                    <a href="#news">News</a>
-                                    <a href="#contact">Contact</a>
-                                    <a href="#about">About</a>
-                                </div>
-                                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                                    <i class="fa fa-bars"></i>
-                                </a>
+                            <div id="menuToggle">
+                                <input type="checkbox"/>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <ul id="menu">
+                                    <li><a href="index.php">Accueil</a></li>
+                                    <li><a href="#">Redirection</a></li>
+                                    <li><a href="about.php">About us</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
+                                    <li><a href="signup.php">Inscription</a></li>
+                                </ul>
                             </div>
                         </nav>
                     </div>

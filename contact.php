@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('function/functions.php');
 include('inc/pdo.php');
 require_once ("inc/header.php");

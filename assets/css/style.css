@@ -59,7 +59,6 @@ body {
 }
 
 #header .connected {
-    width: 25%;
     float: right;
     display: inline-block;
     line-height: 40px;
@@ -79,7 +78,7 @@ body {
 /* Menu Burger */
 
 #menuToggle {
-    display: none;
+    display: block;
     position: absolute;
     top: 20px;
     right: 40px;
@@ -89,7 +88,7 @@ body {
 }
 
 #menuToggle input {
-    display: none;
+    display: block;
     width: 40px;
     height: 32px;
     position: absolute;
@@ -102,7 +101,7 @@ body {
 }
 
 #menuToggle span {
-    display: none;
+    display: block;
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
@@ -139,7 +138,7 @@ body {
 }
 
 #menu {
-    position: relative;
+    position: absolute;
     width: 300px;
     height: 800px;
     margin: -100px 0 0 0;
@@ -161,27 +160,6 @@ body {
 #menuToggle input:checked ~ ul {
     transform: scale(1.0, 1.0);
     opacity: 1;
-}
-
-@media screen and (max-width: 1178px) {
-    .connect {
-        display: none;
-    }
-    .inscr {
-        display: none;
-    }
-    #header nav ul  {
-        display: none;
-    }
-    #menuToggle {
-        display: block;
-    }
-    #menuToggle input {
-        display: block;
-    }
-    #menuToggle span {
-        display: block;
-    }
 }
 
 /*Fin Menu burger*/
@@ -264,6 +242,42 @@ body {
     color: rgba(0, 0, 0, 100);
 }
 
+#section2 {
+    background: radial-gradient(grey, black);
+}
+
+.wrapSection2{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+#section2 .img {
+    width: 100%;
+}
+.img img{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 6%;
+    width: 25%;
+    border-radius: 100%;
+    float: left;
+}
+
+#section2 h2 {
+    text-align: center;
+    color: white;
+    padding-bottom: 40px;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+#section2 .engagements ul {
+    padding-bottom: 30px;
+}
+#section2 .engagements ul li  {
+    text-align: center;
+    color: white;
+    line-height: 30px;
+}
 /*Page 404 */
 .wrap404 {
     max-width: 600px;
@@ -298,6 +312,7 @@ body {
     margin-top: 150px;
 }
 
+
 #table {
     border-collapse: collapse;
     max-width: 95%;
@@ -327,13 +342,20 @@ body {
 
 /* Graphique */
 
-#chartProt, #chartCountry {
+
+
+canvas {
     max-width: 80%;
     margin-left: 10%;
 }
 
 #chartProt {
     margin-top: 120px;
+}
+
+
+#chartCountry, #chartMachine {
+    margin-top: 50px;
 }
 
 /*Form Inscription */
@@ -798,7 +820,7 @@ footer {
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0 1);
+    background-color: rgba(0, 0, 0, 1);
     text-align: center;
 }
 
@@ -947,8 +969,6 @@ u {
 .list_cgu li {
     margin-bottom: 4px;
 }
-
-
 
 
 

@@ -1,4 +1,5 @@
 <?php
+require_once ('function/functions.php');
 session_start();
 $errors = array();
 $success = false;
