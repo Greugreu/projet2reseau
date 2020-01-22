@@ -4,13 +4,12 @@ session_start();
 require("function/functions.php");
 require("function/debug.php");
 /*if (is_logged()) {*/
-require_once("inc/header.php");
+    require_once("inc/header.php");
 
-$fichier = file_get_contents('capturemin.json');
-//    debug($fichier);
-$json = json_decode($fichier, true);
-//debug($json);
-//debug($json);
+    $fichier = file_get_contents('capturemin.json');
+
+    $json = json_decode($fichier, true);
+
 
 
 ?>

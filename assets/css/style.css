@@ -224,7 +224,6 @@ body {
 
 #section .btnr {
     width: 300px;
-    margin-right: 30px;
     background-color: transparent;
 }
 
@@ -237,7 +236,17 @@ body {
     background: #ECECEC;
     color: rgba(0, 0, 0, 100);
 }
+@media screen and (max-width: 736px) {
+    #section .btnl {
+        width: 100%
+    }
+}
 
+@media screen and (max-width: 736px) {
+    #section .btnr {
+        width: 100%
+    }
+}
 #section2 {
     background: radial-gradient(grey, black);
 }

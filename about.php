@@ -3,6 +3,8 @@ session_start();
 require("function/functions.php");
 require_once ("inc/header.php"); ?>
 
+<section id="background6">
+
 <h1 class="about-title">Qui sommes-nous ?</h1>
     <div class="barre"></div>
 
@@ -14,7 +16,8 @@ require_once ("inc/header.php"); ?>
     graphiques comme par exemple le pays de destination, le
     nombre de requête par pays de destination, le protocole utilisé (UDP ou TCP), ou encore le nombre de connexion
     dans un laps de temps défini.</p>
-<p class="about_us">Dcrypt a été créé en 2020 par 4 jeunes développeurs étudiants: Alexandre Courbois, Stéphane Lecuyer,
+<p class="about_us">Dcrypt a été créé en janvier 2020 par 4 jeunes développeurs étudiants : Alexandre Courbois, Stéphane
+    Lecuyer,
     Victor Clarke et Mathis Houlet.</p>
 
 <h2 class="team">Notre équipe :</h2>
@@ -41,5 +44,7 @@ require_once ("inc/header.php"); ?>
 
     </form>
     </div>
+
+</section>
 
 <?php require_once ("inc/footer.php");
