@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+});
 
     /*ScrollReveal Index */
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
     }
 
-});
+
 
 
 

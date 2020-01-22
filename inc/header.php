@@ -55,6 +55,7 @@
                         <a class="inscr" href="signup.php">Inscription</a>
                         <a class="connect" href="login.php">Connexion</a>
                         <?php } ?>
+                    </div>
 
 
                         <div class="mobile-container">
@@ -69,7 +70,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+
                 </nav>
 
 
