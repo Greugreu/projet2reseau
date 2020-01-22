@@ -25,14 +25,14 @@ require("function/debug.php");
     <div id="tab">
         <table id="table">
             <thead>
-            <th>Date et heure</th>
-            <th>Adresse IP Source</th>
-            <th>Adresse IP Destination</th>
-            <th>Adresse MAC Source</th>
-            <th>Adresse MAC Destination</th>
-            <th>Protocole</th>
-            <th>Port Source</th>
-            <th>Port Destination</th>
+            <th id="fitText">Date et heure</th>
+            <th id="fitText">Adresse IP Source</th>
+            <th id="fitText">Adresse IP Destination</th>
+            <th id="fitText">Adresse MAC Source</th>
+            <th id="fitText">Adresse MAC Destination</th>
+            <th id="fitText">Protocole</th>
+            <th id="fitText">Port Source</th>
+            <th id="fitText">Port Destination</th>
 
             </thead>
             <tbody>
@@ -50,13 +50,13 @@ require("function/debug.php");
                 $row = $json[$i]['_source']['layers'];
                 if (isset($row['frame'])) {
                     $date = explode(".", $json[$i]['_source']['layers']['frame']['frame.time']);
-                    echo '<td>' . $date[0] . '</td>';
+                    echo '<td id="fitText">' . $date[0] . '</td>';
                 } else {
                     echo '<td></td>';
                 }
                 if (isset($row['ip'])) {
-                    echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
 
                     $curl = curl_init();
 
@@ -95,21 +95,21 @@ require("function/debug.php");
                     echo '<td></td>';
                 }
                 if (isset($row['eth'])) {
-                    echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
                 } else {
                     echo '<td></td>';
                     echo '<td></td>';
                 }
                 if (isset($row['udp'])) {
-                    echo '<td>UDP</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
+                    echo '<td id="fitText">UDP</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
                     $udp++;
                 } else if (isset($row['tcp'])) {
-                    echo '<td>TCP</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
-                    echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
+                    echo '<td id="fitText">TCP</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
+                    echo '<td id="fitText">' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
                     $tcp++;
                 } else {
                     echo '<td></td>';
@@ -245,6 +245,7 @@ require("function/debug.php");
                 }
             }
         });
+        $("#fittext").fitText(1.1, { minFontSize: '50px', maxFontSize: '75px' });
     </script>
 <?php require_once("inc/footer.php");
 /*} else {
