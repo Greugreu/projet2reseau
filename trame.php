@@ -7,10 +7,9 @@ require("function/debug.php");
     require_once("inc/header.php");
 
     $fichier = file_get_contents('capturemin.json');
-    debug($fichier);
+
     $json = json_decode($fichier, true);
-    //debug($json);
-    debug($json);
+
 
 
     ?>
