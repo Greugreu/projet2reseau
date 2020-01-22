@@ -3,11 +3,13 @@
 <head>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>DCRYPT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
@@ -44,28 +46,34 @@
                         <li><a href="travail.php">objectifs</a></li>
                         <li><a href="about.php">About us</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <li><a href="signup.php">Inscription</a></li>
+
                     </ul>
-                    <div class="connected">
+
+
+
+                    <div class="unconnected">
+                        <a class="inscr" href="signup.php">Inscription</a>
                         <a class="connect" href="login.php">Connexion</a>
                         <?php } ?>
-                        <nav role='navigation'>
-                            <div id="menuToggle">
-                                <input type="checkbox"/>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <ul id="menu">
-                                    <li><a href="index.php">Accueil</a></li>
-                                    <li><a href="#">Redirection</a></li>
-                                    <li><a href="about.php">About us</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
-                                    <li><a href="signup.php">Inscription</a></li>
-                                </ul>
+
+
+                        <div class="mobile-container">
+                            <div class="topnav">
+                                <div id="myLinks">
+                                    <a class="first_link" href="#news">News</a>
+                                    <a href="#contact">Contact</a>
+                                    <a href="#about">About</a>
+                                </div>
+                                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                    <i class="fa fa-bars"></i>
+                                </a>
                             </div>
-                        </nav>
+                        </div>
                     </div>
                 </nav>
+
+
+
                 <div class="clear"></div>
     </header>
-</div>
+
