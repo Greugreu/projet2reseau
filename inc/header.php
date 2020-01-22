@@ -61,9 +61,13 @@
                         <div class="mobile-container">
                             <div class="topnav">
                                 <div id="myLinks">
-                                    <a class="first_link" href="#news">News</a>
-                                    <a href="#contact">Contact</a>
-                                    <a href="#about">About</a>
+                                    <a href="index.php">Accueil</a>
+                                    <a href="about.php">About us</a>
+                                    <a href="contact.php">Contact</a>
+                                    <a href="signup.php">Inscription</a>
+                                    <a href="login.php">Connexion</a>
+                                    <a href="back/admin.php">Administration</a>
+                                    <a href="travail.php">Objectifs</a>
                                 </div>
                                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                     <i class="fa fa-bars"></i>

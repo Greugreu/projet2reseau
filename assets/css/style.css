@@ -114,6 +114,9 @@ body {
     .topnav #myLinks {
         display: none;
     }
+    #header nav ul li {
+        display: none;
+    }
 }
 
 
@@ -123,7 +126,7 @@ body {
 
 
 @media screen and (min-width: 1155px) {
-    .topnav a.icon {
+    .topnav a.icon {;
         background: none;
         display: none;
     }
@@ -134,6 +137,7 @@ body {
 
 .fa {
     font-size: 2em;
+    margin-top: 5px;
 }
 
 /*Fin Menu burger*/
