@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
 });
 
     /*ScrollReveal Index */
@@ -32,9 +33,6 @@ $(document).ready(function () {
             x.style.display = "block";
         }
     }
-
-
-
 
 
 
