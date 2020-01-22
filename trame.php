@@ -4,146 +4,148 @@ session_start();
 require("function/functions.php");
 require("function/debug.php");
 /*if (is_logged()) {*/
-    require_once("inc/header.php");
+require_once("inc/header.php");
 
-    $fichier = file_get_contents('capturemin.json');
-    debug($fichier);
-    $json = json_decode($fichier, true);
-    //debug($json);
-    debug($json);
-
-
-    ?>
-
-    <canvas id="chartProt"></canvas>
-    <canvas id="chartMachine"></canvas>
-    <canvas id="chartCountry"></canvas>
-
-    <!--    --><?php
-//    $testDate = explode(".", $json[1]['_source']['layers']['frame']['frame.time']);
-//    echo $testDate[0].'<br>';
-//    echo strtotime($testDate[0]);?>
-    <table id="table">
-        <thead>
-        <th>Date et heure</th>
-        <th>Adresse IP Source</th>
-        <th>Adresse IP Destination</th>
-        <th>Adresse MAC Source</th>
-        <th>Adresse MAC Destination</th>
-        <th>Protocole</th>
-        <th>Port Source</th>
-        <th>Port Destination</th>
-
-        </thead>
-        <tbody>
-        <?php
-        $nb = count($json);
-        $udp = 0;
-        $tcp = 0;
-        $tab = array();
-        $intel = 0;
-        $apple = 0;
-        $autre = 0;
-
-        for ($i = 0; $i < $nb; $i++) {
-            echo '<tr>';
-            $row = $json[$i]['_source']['layers'];
-            if (isset($row['frame'])) {
-                $date = explode(".", $json[$i]['_source']['layers']['frame']['frame.time']);
-                echo '<td>' . $date[0] . '</td>';
-            } else {
-                echo '<td></td>';
-            }
-            if (isset($row['ip'])) {
-                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
-
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => "https://freegeoip.app/json/" . $json[$i]['_source']['layers']['ip']['ip.dst'],
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 30,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
-                    CURLOPT_HTTPHEADER => array(
-                        "accept: application/json",
-                        "content-type: application/json"
-                    ),
-                ));
-
-                $response = curl_exec($curl);
-                $err = curl_error($curl);
-
-                $test = json_decode($response);
+$fichier = file_get_contents('capturemin.json');
+//    debug($fichier);
+$json = json_decode($fichier, true);
+//debug($json);
+//debug($json);
 
 
-                $countryName = $test->country_name;
-                $z = [
-                    'country_name' => $countryName
-                ];
-                if ($z['country_name'] === "") {
-                    unset($z['country_name']);
+?>
+    <div id="graph">
+        <div id="graphCirc1">
+            <canvas id="chartProt"></canvas>
+        </div>
+        <div id="graphCirc2">
+            <canvas id="chartMachine"></canvas>
+        </div>
+        <canvas id="chartCountry"></canvas>
+    </div>
+    <div id="tab">
+        <table id="table">
+            <thead>
+            <th>Date et heure</th>
+            <th>Adresse IP Source</th>
+            <th>Adresse IP Destination</th>
+            <th>Adresse MAC Source</th>
+            <th>Adresse MAC Destination</th>
+            <th>Protocole</th>
+            <th>Port Source</th>
+            <th>Port Destination</th>
+
+            </thead>
+            <tbody>
+            <?php
+            $nb = count($json);
+            $udp = 0;
+            $tcp = 0;
+            $tab = array();
+            $intel = 0;
+            $apple = 0;
+            $autre = 0;
+
+            for ($i = 0; $i < $nb; $i++) {
+                echo '<tr>';
+                $row = $json[$i]['_source']['layers'];
+                if (isset($row['frame'])) {
+                    $date = explode(".", $json[$i]['_source']['layers']['frame']['frame.time']);
+                    echo '<td>' . $date[0] . '</td>';
                 } else {
-                    $countryName = $z['country_name'];
-                    $tab[] .= $countryName;
+                    echo '<td></td>';
                 }
-            } else {
-                echo '<td></td>';
-                echo '<td></td>';
-            }
-            if (isset($row['eth'])) {
-                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
-            } else {
-                echo '<td></td>';
-                echo '<td></td>';
-            }
-            if (isset($row['udp'])) {
-                echo '<td>UDP</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
-                $udp++;
-            } else if (isset($row['tcp'])) {
-                echo '<td>TCP</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
-                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
-                $tcp++;
-            } else {
-                echo '<td></td>';
-                echo '<td></td>';
-                echo '<td></td>';
-            }
+                if (isset($row['ip'])) {
+                    echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
 
-            echo '</tr>';
-            if (isset($row['eth']['eth.src_tree'])) {
-                if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc.") {
-                    $apple++;
-                } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate") {
-                    $intel++;
+                    $curl = curl_init();
+
+                    curl_setopt_array($curl, array(
+                        CURLOPT_URL => "https://freegeoip.app/json/" . $json[$i]['_source']['layers']['ip']['ip.dst'],
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => "",
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 30,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
+                        CURLOPT_HTTPHEADER => array(
+                            "accept: application/json",
+                            "content-type: application/json"
+                        ),
+                    ));
+
+                    $response = curl_exec($curl);
+                    $err = curl_error($curl);
+
+                    $test = json_decode($response);
+
+
+                    $countryName = $test->country_name;
+                    $z = [
+                        'country_name' => $countryName
+                    ];
+                    if ($z['country_name'] === "") {
+                        unset($z['country_name']);
+                    } else {
+                        $countryName = $z['country_name'];
+                        $tab[] .= $countryName;
+                    }
                 } else {
-                    $autre++;
+                    echo '<td></td>';
+                    echo '<td></td>';
+                }
+                if (isset($row['eth'])) {
+                    echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
+                } else {
+                    echo '<td></td>';
+                    echo '<td></td>';
+                }
+                if (isset($row['udp'])) {
+                    echo '<td>UDP</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
+                    $udp++;
+                } else if (isset($row['tcp'])) {
+                    echo '<td>TCP</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
+                    echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
+                    $tcp++;
+                } else {
+                    echo '<td></td>';
+                    echo '<td></td>';
+                    echo '<td></td>';
+                }
+
+                echo '</tr>';
+                if (isset($row['eth']['eth.src_tree'])) {
+                    if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Apple, Inc.") {
+                        $apple++;
+                    } else if ($row['eth']['eth.src_tree']['eth.addr.oui_resolved'] === "Intel Corporate") {
+                        $intel++;
+                    } else {
+                        $autre++;
+                    }
                 }
             }
-        }
-        $nbCountry = array_count_values($tab);
-        $labels = '';
-        $colors = '';
-        $val = '';
+            $nbCountry = array_count_values($tab);
+            $labels = '';
+            $colors = '';
+            $val = '';
 
-        foreach ($nbCountry as $key => $nb) {
-            $color1 = rand(0, 255);
-            $color2 = rand(0, 255);
-            $color3 = rand(0, 255);
-            $labels .= "'" . $key . "',";
-            $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
-            $val .= $nbCountry[$key] . ",";
-        }
-        ?>
-        </tbody>
-    </table>
+            foreach ($nbCountry as $key => $nb) {
+                $color1 = rand(0, 255);
+                $color2 = rand(0, 255);
+                $color3 = rand(0, 255);
+                $labels .= "'" . $key . "',";
+                $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
+                $val .= $nbCountry[$key] . ",";
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 
     <!-- Stat a faire :
     Nb de connexion à la minute en splittant frame.time
@@ -172,7 +174,7 @@ require("function/debug.php");
                 legend: {display: false},
                 title: {
                     display: true,
-                    text: 'Protocole utilisé'
+                    text: 'Protocoles utilisés'
                 }
             }
         });
@@ -237,14 +239,15 @@ require("function/debug.php");
             },
             // Configuration options go here
             options: {
+                legend: {display: false},
                 title: {
                     display: true,
-                    text: 'Marque carte réseau'
+                    text: 'Marques cartes réseaux'
                 }
             }
         });
     </script>
-    <?php require_once("inc/footer.php");
+<?php require_once("inc/footer.php");
 /*} else {
     header('Location: 404.php');
 
