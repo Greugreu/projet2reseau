@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("function/functions.php");
+require('function/functions.php');
 require_once ('inc/header.php');
 ?>
 
