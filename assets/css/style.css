@@ -384,7 +384,7 @@ canvas {
 .signup_title {
     padding-top: 150px;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5vw;
     color: white;
 }
 
@@ -486,7 +486,8 @@ canvas {
     text-align: center;
     margin-top: 25px;
     margin-left: 6%;
-    padding: 10px 80px;
+    margin-right: 6%;
+    padding: 10px 10%;
     border: 1px solid;
     border-color: black;
     border-radius: 10px;
@@ -543,7 +544,7 @@ canvas {
 .contact_title {
     text-align: center;
     padding-top: 150px;
-    font-size: 2em;
+    font-size: 2.5vw;
     color: white;
 }
 
@@ -645,7 +646,8 @@ form {
     text-align: center;
     margin-top: 25px;
     margin-left: 6%;
-    padding: 10px 80px;
+    margin-right: 6%;
+    padding: 10px 10%;
     border: 1px solid;
     border-color: black;
     border-radius: 10px;
@@ -725,13 +727,14 @@ form {
 #submit_log {
     text-align: center;
     margin-top: 25px;
-    margin-left: 42%;
-    padding: 10px 80px;
+    margin-left: 43.5%;
+    margin-right: 43.5%;
+    padding: 10px 5%;
     border: 1px solid;
     border-color: black;
     border-radius: 10px;
     font-size: 1em;
-    margin-bottom: 72px;
+    margin-bottom: 50px;
     background-color: white;
     cursor: pointer;
     color: black;
