@@ -114,9 +114,12 @@ body {
     .topnav #myLinks {
         display: none;
     }
-    #header nav ul li {
-        display: none;
-    }
+
+}
+@media screen and (max-width: 850px) {
+        #header nav ul li {
+            display: none;
+        }
 }
 
 
