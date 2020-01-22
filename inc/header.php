@@ -25,7 +25,6 @@
             </div>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">Redirection</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <?php if (is_admin()) { ?>
