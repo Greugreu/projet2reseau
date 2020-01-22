@@ -307,12 +307,17 @@ body {
     margin-top: 150px;
 }
 
+#tab{
+    width: 95%;
+    margin-top: 2%;
+    margin-left: 11%;
+    margin-bottom: 2%;
+}
 
 #table {
     border-collapse: collapse;
     text-align: center;
-    margin: 120px 2.5% 50px 2.5%;
-    float: right;
+
 }
 
 #table th, #table td {
@@ -341,14 +346,25 @@ body {
 canvas {
     max-width: 80%;
 }
-
-#chartProt {
+#graph{
+    width: 80%;
+    margin-left: 12.5%;
     margin-top: 120px;
 }
-
-
-#chartCountry, #chartMachine {
-    margin-top: 50px;
+#graphCirc1{
+    width: 50%;
+    float: left;
+    padding-left: 5%;
+}
+#graphCirc2{
+    width: 50%;
+    float: right;
+    padding-right: 5%;
+}
+#chartCountry{
+    padding-top: 2%;
+    margin-left: 5%;
+    width: 80%;
 }
 
 /*Form Inscription */
