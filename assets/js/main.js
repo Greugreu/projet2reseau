@@ -22,3 +22,12 @@ ScrollReveal().reveal('.contact', { delay: 100 });
 ScrollReveal().reveal('.ml', { delay: 150 });
 ScrollReveal().reveal('.cgu', { delay: 200 });
 ScrollReveal().reveal('.who', { delay: 250 });
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}

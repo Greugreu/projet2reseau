@@ -16,7 +16,7 @@
 
 <div class="wrap">
     <header id="header">
-        <?php if (!empty($_SESSION)) { ?>
+        <?php if (is_logged()) { ?>
         <nav id="nav" class="nav">
             <div class="logo">
                 <a href="index.php"><img src="assets/img/logo.png" alt=""></a>
@@ -26,7 +26,11 @@
                 <li><a href="#">Redirection</a></li>
                 <li><a href="trame.php">Lecture trame</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="#">Redirection</a></li>
+                <?php if (is_admin()) { ?>
+                    <li><a href="back/admin.php">Administration</a></li>
+                <?php } else { ?>
+                    <li><a href="travail.php">Objectifs</a></li>
+                <?php } ?>
             </ul>
             <div class="connected">
                 <a class="connect" href="deconnexion.php">Deconnexion</a>
@@ -37,7 +41,7 @@
                     </div>
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
-                        <li><a href="#">Redirection</a></li>
+                        <li><a href="travail.php">objectifs</a></li>
                         <li><a href="about.php">About us</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="signup.php">Inscription</a></li>
@@ -46,18 +50,16 @@
                         <a class="connect" href="login.php">Connexion</a>
                         <?php } ?>
                         <nav role='navigation'>
-                            <div id="menuToggle">
-                                <input type="checkbox"/>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <ul id="menu">
-                                    <li><a href="index.php">Accueil</a></li>
-                                    <li><a href="#">Redirection</a></li>
-                                    <li><a href="about.php">About us</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
-                                    <li><a href="signup.php">Inscription</a></li>
-                                </ul>
+                            <div class="topnav">
+                                <a href="#home" class="active">Logo</a>
+                                <div id="myLinks">
+                                    <a href="#news">News</a>
+                                    <a href="#contact">Contact</a>
+                                    <a href="#about">About</a>
+                                </div>
+                                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                    <i class="fa fa-bars"></i>
+                                </a>
                             </div>
                         </nav>
                     </div>
