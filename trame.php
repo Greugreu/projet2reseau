@@ -160,7 +160,7 @@ if (!empty($_POST['submitted'])) {
                         $labels .= "'" . $key . "',";
                         $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
                         $val .= $nbCountry[$key] . ",";
-                        $mavVal = max($nbCountry[$key]);
+                        $mavVal = max($nbCountry);
                     }
                     ?>
                     </tbody>
