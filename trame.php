@@ -3,7 +3,7 @@ session_start();
 
 require("function/functions.php");
 require("function/debug.php");
-/*if (is_logged()) {*/
+if (is_logged()) {
     require_once("inc/header.php");
 
 ?>
@@ -53,7 +53,6 @@ if (!empty($_POST['submitted'])) {
                     <th id="fitText">Protocole</th>
                     <th id="fitText">Port Source</th>
                     <th id="fitText">Port Destination</th>
-
                     </thead>
                     <tbody>
                     <?php
@@ -77,9 +76,7 @@ if (!empty($_POST['submitted'])) {
                         if (isset($row['ip'])) {
                             echo '<td id="fitText">' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
                             echo '<td id="fitText">' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
-
                             $curl = curl_init();
-
                             curl_setopt_array($curl, array(
                                 CURLOPT_URL => "https://freegeoip.app/json/" . $json[$i]['_source']['layers']['ip']['ip.dst'],
                                 CURLOPT_RETURNTRANSFER => true,
@@ -93,13 +90,9 @@ if (!empty($_POST['submitted'])) {
                                     "content-type: application/json"
                                 ),
                             ));
-
                             $response = curl_exec($curl);
                             $err = curl_error($curl);
-
                             $test = json_decode($response);
-
-
                             $countryName = $test->country_name;
                             $z = [
                                 'country_name' => $countryName
@@ -167,16 +160,10 @@ if (!empty($_POST['submitted'])) {
                 </table>
             </div>
 
-            <!-- Stat a faire :
-            Nb de connexion à la minute en splittant frame.time
-            Voir pour géoloc les @ip
-            Voir pour reconnaitre Netflix, Fb, etc...-->
             <script>
                 var ctx1 = document.getElementById('chartProt').getContext('2d');
                 var chart1 = new Chart(ctx1, {
-                    // The type of chart we want to create
                     type: 'pie',
-                    // The data for our dataset
                     data: {
                         labels: ['TCP', 'UDP'],
                         datasets: [{
@@ -189,7 +176,6 @@ if (!empty($_POST['submitted'])) {
                             data: [<?=$tcp?>, <?=$udp;?>]
                         }]
                     },
-                    // Configuration options go here
                     options: {
                         legend: {display: false},
                         title: {
@@ -201,9 +187,7 @@ if (!empty($_POST['submitted'])) {
 
                 var ctx2 = document.getElementById('chartCountry').getContext('2d');
                 var chart2 = new Chart(ctx2, {
-                    // The type of chart we want to create
                     type: 'horizontalBar',
-                    // The data for our dataset
                     data: {
                         labels: [<?= $labels ?>],
                         datasets: [{
@@ -215,7 +199,6 @@ if (!empty($_POST['submitted'])) {
                             data: [<?=$val?>]
                         }]
                     },
-                    // Configuration options go here
                     options: {
                         display: 'auto',
                         minBarLength: 0,
@@ -229,7 +212,6 @@ if (!empty($_POST['submitted'])) {
                                     step: 1
                                 }
                             }]
-
                         },
                         legend: {display: false},
                         title: {
@@ -241,9 +223,7 @@ if (!empty($_POST['submitted'])) {
 
                 var ctx3 = document.getElementById('chartMachine').getContext('2d');
                 var chart3 = new Chart(ctx3, {
-                    // The type of chart we want to create
                     type: 'polarArea',
-                    // The data for our dataset
                     data: {
                         labels: ['Intel', 'Apple', 'Autres'],
                         datasets: [{
@@ -257,7 +237,6 @@ if (!empty($_POST['submitted'])) {
                             data: [<?=$intel?>, <?=$apple;?>, <?=$autre;?>]
                         }]
                     },
-                    // Configuration options go here
                     options: {
                         legend: {display: false},
                         title: {
@@ -275,7 +254,7 @@ if (!empty($_POST['submitted'])) {
     }
 }
 require_once("inc/footer.php");
-/*} else {
+} else {
     header('Location: 404.php');
 
-}*/
+}
