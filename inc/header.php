@@ -16,7 +16,7 @@
 
 <body>
 
-<div class="wrap">
+
     <header id="header">
         <?php if (is_logged()) { ?>
         <nav id="nav" class="nav">
@@ -82,7 +82,7 @@
                                 <i class="fa fa-bars"></i>
                                 </a>
                             </div>
-                        </div>
+
 
                 </nav>
 

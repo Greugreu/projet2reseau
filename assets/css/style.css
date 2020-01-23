@@ -1439,16 +1439,45 @@ u {
 
 .forgot_p {
     padding-top: 100px;
-    margin-left: 40%;
-    font-size: 1.5em;
+    margin-left: 40.5%;
+    margin-right: 40.5%;
+    font-size: 2vw;
     color: black;
-    display: block;
-
 }
 
 .here {
+    display: inline;
+    float: left;
+    margin-left: 50%;
+    position: absolute;
+    margin-top: 250px;
+}
+
+#form_forgot {
     display: inline-block;
-    margin-top: 150px;
+    margin-right: 39%;
+    margin-top: 50px;
+    float: right;
+    margin-bottom: 300px;
+}
+
+#submit_forgot {
+    margin-top: 25px;
+    margin-left: 8%;
+    padding: 10px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-bottom: 50px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+
+#submit_forgot:hover {
+    background-color: #525252;
+    color: white;
 }
 
 /* FILE UPLOAD */

@@ -19,7 +19,7 @@ if (!empty($_POST['submitted'])) {
     if (!empty($user)) {
         $token = $user['token'];
         $email = urlencode($user['mail']);
-        $html = '<p class="here"><a href="password_modif.php?token='.$token.'&mail='.$email.'"</p>C\'est ici</a>';
+        $html = '<div class="wrap10"><p class="here"><a href="password_modif.php?token='.$token.'&mail='.$email.'">C\'est ici</a></p></div>';
         echo $html;
     } else {
         $errors['email'] = 'Email inconnu';
