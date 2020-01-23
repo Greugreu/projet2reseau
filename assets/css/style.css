@@ -641,7 +641,7 @@ margin-left: 30%;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 1em;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     background-color: white;
     cursor: pointer;
     color: black;
@@ -655,7 +655,7 @@ margin-left: 30%;
 #background2 {
     background: radial-gradient(grey, black);
     width: 100%;
-    height: 600px;
+    height: 615px;
 }
 
 @media screen and (max-width: 960px) {
@@ -1495,4 +1495,9 @@ input[type="file"] {
 
 .upload form input {
     padding: 10px;
+}
+
+#checklog{
+    margin: 10px 0 0 0;
+    margin-left: 15%;
 }
