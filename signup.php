@@ -39,6 +39,9 @@ include 'inc/signup.inc.php';
             <input type="password" name="cfrmPassword" id="cfrmPassword" placeholder="Confirmez votre mdp*">
             <?php spanErr($errors, 'cfrmPassword'); ?>
         </div>
+        <input type="checkbox" name="checklog" value=""
+        <p class="accept">J'accepte les <a class="checklink" href="cgu.php">CGU</a> ainsi que les <br><a
+        class="checklink" href="mentions-legales.php">mentions légales</a>*</p>
         <p class="need">* Champs obligatoires</p>
         <input id="submit_signup" type="submit" name="submitted" value="Envoyer">
     </form>

@@ -552,6 +552,19 @@ canvas {
     color: white;
 }
 
+.accept {
+    margin-top: 15px;
+}
+
+.checklink {
+    font-weight: bold;
+    color: white;
+}
+
+.checklink:hover {
+    color: lightslategrey;
+}
+
 #submit_signup {
     margin-top: 25px;
     margin-left: 8%;
@@ -997,7 +1010,7 @@ form {
 #background3 {
     background: radial-gradient(grey, black 110%);
     width: 100%;
-    height: 513px;
+    height: 580px;
 }
 
 @media screen and (max-width: 960px)  {
