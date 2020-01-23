@@ -26,11 +26,11 @@ if (!empty($_GET['token'] && !empty($_GET['mail']))) {
 
                 <form class="newPassword" action="" method="post">
 
-                    <label class="password password1" for="password">Nouveau mot de passe : </label>
-                    <input class="pwd pwd1" type="password" name="password" id="password">
+                    <label class="passwordModif passwordModif1" for="password">Nouveau mot de passe : </label>
+                    <input class="pwdModif pwdModif1" type="password" name="password" id="password">
 
-                    <label class="password password2" for="password2">Confirmez mot de passe : </label>
-                    <input class="pwd pwd2" type="password" name="password2" id="password2">
+                    <label class="passwordModif passwordModif2" for="password2">Confirmez mot de passe : </label>
+                    <input class="pwdModif pwdModif2" type="password" name="password2" id="password2">
 
                     <input class="inputPwd" type="submit" name="submitted" value="Envoyer">
 
