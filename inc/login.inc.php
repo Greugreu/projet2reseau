@@ -13,8 +13,8 @@ if (!empty($_POST['submitted'])) {
     $login = clean($_POST['mail']);
     $password = clean($_POST['password']);
 
-    if (empty($login || empty($password))) {
-        $errors = 'Veuillez renseigner ces champs';
+    if (empty($login)) {
+        $errors = 'Veuillez renseigner ce champ';
     } else {
         $sql = "SELECT * FROM user WHERE mail = :login";
         $query = $pdo->prepare($sql);
