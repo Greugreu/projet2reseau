@@ -20,18 +20,25 @@ if (!empty($_GET['token'] && !empty($_GET['mail']))) {
 
     if ($user['mail'] === $email_url && $user['token'] === $token_url) { ?>
 
-        <h1>Mot de passe oublié</h1>
+        <div class="backgroundMdp">
+            <div class="wrapMdp">
+                <h3 class="h3Mdp">Mot de passe oublie :</h3>
 
-        <form action="" method="post">
-            <label for="password">Votre nouveau mdp</label>
-            <input type="password" name="password" id="password">
+                <form class="newPassword" action="" method="post">
 
-            <label for="password2">Confirmez votre nouveau mdp</label>
-            <input type="password" name="password2" id="password2">
+                    <label class="password password1" for="password">Nouveau mot de passe : </label>
+                    <input class="pwd pwd1" type="password" name="password" id="password">
 
-            <input type="submit" name="submitted" value="Envoyer">
-        </form>
+                    <label class="password password2" for="password2">Confirmez mot de passe : </label>
+                    <input class="pwd pwd2" type="password" name="password2" id="password2">
 
+                    <input class="inputPwd" type="submit" name="submitted" value="Envoyer">
+
+                </form>
+            </div>
+        </div>
+
+        <?php require_once ("inc/footer.php");?>
         <?php
         if (!empty($_POST['submitted'])) {
             $password1 = clean($_POST['password']);
@@ -58,3 +65,5 @@ if (!empty($_GET['token'] && !empty($_GET['mail']))) {
 } else {
     die('Erreur dans le formulaire');
 }
+
+
