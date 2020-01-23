@@ -84,15 +84,18 @@ body {
     #header .inscr {
         display: none;
     }
+
     #header .connect {
         display: none;
     }
+
     .topnav a.icon {
         display: block;
         right: 3%;
         top: 0;
         position: absolute;
     }
+
     .topnav a {
         color: white;
         padding: 14px 16px;
@@ -100,6 +103,7 @@ body {
         font-size: 17px;
         display: block;
     }
+
     .mobile-container {
         float: right;
         position: fixed;
@@ -118,12 +122,12 @@ body {
     }
 
 }
-@media screen and (max-width: 850px) {
-        #header nav ul li {
-            display: none;
-        }
-}
 
+@media screen and (max-width: 850px) {
+    #header nav ul li {
+        display: none;
+    }
+}
 
 
 .topnav #myLinks {
@@ -131,10 +135,7 @@ body {
 }
 
 
-
 /* Menu Burger */
-
-
 
 
 @media screen and (min-width: 1155px) {
@@ -142,6 +143,7 @@ body {
         background: none;
         display: none;
     }
+
     .topnav #myLinks {
         display: none;
     }
@@ -248,15 +250,17 @@ body {
     background: radial-gradient(grey, black);
 }
 
-.wrapSection2{
+.wrapSection2 {
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
 }
+
 #section2 .img {
     width: 100%;
 }
-.img img{
+
+.img img {
     margin-top: 100px;
     margin-bottom: 50px;
     margin-left: 6%;
@@ -272,14 +276,17 @@ body {
     font-size: 1.5em;
     text-decoration: underline;
 }
+
 #section2 .engagements ul {
     padding-bottom: 30px;
 }
-#section2 .engagements ul li  {
+
+#section2 .engagements ul li {
     text-align: center;
     color: white;
     line-height: 30px;
 }
+
 /*Page 404 */
 
 .wrap404 {
@@ -319,7 +326,7 @@ body {
     margin-top: 150px;
 }
 
-#tab{
+#tab {
     width: 95%;
     margin-top: 2%;
     margin-left: 11%;
@@ -354,26 +361,29 @@ body {
 /* Graphique */
 
 
-
 canvas {
     max-width: 80%;
 }
-#graph{
+
+#graph {
     width: 80%;
     margin-left: 12.5%;
     margin-top: 120px;
 }
-#graphCirc1{
+
+#graphCirc1 {
     width: 50%;
     float: left;
     padding-left: 5%;
 }
-#graphCirc2{
+
+#graphCirc2 {
     width: 50%;
     float: right;
     padding-right: 5%;
 }
-#chartCountry{
+
+#chartCountry {
     padding-top: 2%;
     margin-left: 5%;
     width: 80%;
@@ -508,10 +518,11 @@ canvas {
     height: 600px;
 }
 
-@media screen and (max-width: 960px)  {
+@media screen and (max-width: 960px) {
     .signup_title {
         font-size: 1.5em;
     }
+
     .barre {
         width: 145px;
     }
@@ -521,6 +532,7 @@ canvas {
     #submit_signup {
         margin-left: 7%;
     }
+
     .signup {
         margin-left: 35.5%;
     }
@@ -530,6 +542,7 @@ canvas {
     .signup {
         margin-left: 31%;
     }
+
     #submit_signup {
         margin-left: 12%;
     }
@@ -539,9 +552,11 @@ canvas {
     .signup_title {
         font-size: 1.2em;
     }
+
     .signup {
         margin-left: 22%;
     }
+
     #submit_signup {
         margin-left: 15%;
     }
@@ -551,6 +566,7 @@ canvas {
     .signup {
         margin-left: 15%;
     }
+
     #submit_signup {
         margin-left: 18%;
     }
@@ -560,6 +576,7 @@ canvas {
     .signup {
         margin-left: 7.5%;
     }
+
     #submit_signup {
         margin-left: 20%;
     }
@@ -717,21 +734,27 @@ form {
     #submit_contact {
         margin-left: 7%;
     }
+
     #message {
         margin-left: -5%;
     }
+
     #object {
         margin-left: -5%;
     }
+
     #email {
         margin-left: -5%;
     }
+
     .material-icons {
         margin-left: 40%;
     }
+
     .tel {
         margin-left: 32%;
     }
+
     .email {
         margin-left: 28%;
     }
@@ -741,21 +764,27 @@ form {
     #submit_contact {
         margin-left: 5%;
     }
+
     #message {
         margin-left: -10%;
     }
+
     #object {
         margin-left: -10%;
     }
+
     #email {
         margin-left: -10%;
     }
+
     .material-icons {
         margin-left: 40%;
     }
+
     .tel {
         margin-left: 29%;
     }
+
     .email {
         margin-left: 27%;
     }
@@ -765,21 +794,27 @@ form {
     #submit_contact {
         margin-left: -10%;
     }
+
     #message {
         margin-left: -32%;
     }
+
     #object {
         margin-left: -32%;
     }
+
     #email {
         margin-left: -32%;
     }
+
     .material-icons {
         margin-left: 40%;
     }
+
     .tel {
         margin-left: 25%;
     }
+
     .email {
         margin-left: 18%;
     }
@@ -789,36 +824,41 @@ form {
     #submit_contact {
         margin-left: -12%;
     }
+
     #message {
         margin-left: -44%;
     }
+
     #object {
         margin-left: -44%;
     }
+
     #email {
         margin-left: -44%;
     }
+
     .material-icons {
         margin-left: 30%;
     }
+
     .tel {
         margin-left: 10%;
     }
+
     .email {
         margin-left: 5%;
     }
 }
 
-@media screen and (max-width: 960px)  {
+@media screen and (max-width: 960px) {
     .contact_title {
         font-size: 1.5em;
     }
+
     .barre {
         width: 145px;
     }
 }
-
-
 
 
 #submit_contact:hover {
@@ -932,7 +972,7 @@ form {
     height: 513px;
 }
 
-@media screen and (max-width: 960px)  {
+@media screen and (max-width: 960px) {
     .barre {
         width: 145px;
     }
@@ -942,6 +982,7 @@ form {
     #submit_log {
         margin-left: 44.5%;
     }
+
     .log {
         margin-left: -3%;
     }
@@ -951,6 +992,7 @@ form {
     .log {
         margin-left: -10%;
     }
+
     #submit_log {
         margin-left: 47.3%;
     }
@@ -960,6 +1002,7 @@ form {
     .log {
         margin-left: -25%;
     }
+
     #submit_log {
         margin-left: 51.5%;
     }
@@ -969,6 +1012,7 @@ form {
     .log {
         margin-left: -35%;
     }
+
     #submit_log {
         margin-left: 54%;
     }
@@ -978,6 +1022,7 @@ form {
     .log {
         margin-left: -48.5%;
     }
+
     #submit_log {
         margin-left: 57%;
     }
@@ -1076,10 +1121,10 @@ form {
     }
 }
 
-    @media screen and (max-width: 385px) {
-        #background6 {
-            height: 1200px;
-        }
+@media screen and (max-width: 385px) {
+    #background6 {
+        height: 1200px;
+    }
 }
 
 /* footer */
@@ -1090,7 +1135,7 @@ footer {
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0,1);
+    background-color: rgba(0, 0, 0, 1);
     text-align: center;
 }
 
@@ -1252,11 +1297,18 @@ u {
     margin-bottom: 4px;
 }
 
+/* FILE UPLOAD */
+.upload {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 70px;
+    padding: 30px;
+}
 
+input[type="file"] {
+    padding: 100px;
+}
 
-
-
-
-
-
-
+.upload form input {
+    padding: 10px;
+}
