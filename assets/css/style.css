@@ -1496,3 +1496,8 @@ input[type="file"] {
 .upload form input {
     padding: 10px;
 }
+
+#checklog{
+    margin: 10px 0 0 0;
+    margin-left: 15%;
+}
