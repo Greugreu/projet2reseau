@@ -11,7 +11,7 @@ require_once ('inc/header.php');
     <div class="barre"></div>
 
     <div class="login">
-        <form action="#" method="post">
+        <form class="log" action="#" method="post">
             <div class="login">
                 <label for="mail"></label>
                 <input type="email" name="mail" id="mail_log" placeholder="Votre mail" value="<?php if (!empty
