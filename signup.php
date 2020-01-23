@@ -4,6 +4,7 @@ include 'inc/header.php';
 include 'function/debug.php';
 include 'inc/pdo.php';
 include 'inc/signup.inc.php';
+
 ?>
 <section id="background2">
 
@@ -39,10 +40,11 @@ include 'inc/signup.inc.php';
             <input type="password" name="cfrmPassword" id="cfrmPassword" placeholder="Confirmez votre mdp*">
             <?php spanErr($errors, 'cfrmPassword'); ?>
         </div>
-        <input type="checkbox" name="checklog" value=""
+        <input type="checkbox" name="checklog" id="checklog" value="">
         <p class="accept">J'accepte les <a class="checklink" href="cgu.php">CGU</a> ainsi que les <br><a
         class="checklink" href="mentions-legales.php">mentions légales</a>*</p>
         <p class="need">* Champs obligatoires</p>
+        <?php spanErr($errors, 'checklogErr'); ?>
         <input id="submit_signup" type="submit" name="submitted" value="Envoyer">
     </form>
 </div>

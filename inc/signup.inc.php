@@ -16,6 +16,9 @@ if (!empty($_POST['submitted'])) {
     $errors = textValid($errors, $name, 2, 50, 'name');
     $errors = textValid($errors, $surname, 2, 50, 'surname');
     $errors = cleanMail($errors, $mail, 'mail');
+    if(!isset($_POST['checklog'])){
+        $errors['checklogErr'] = "Merci d'accepter les conditions";
+    }
 
     if (!empty($mail)) {
         $sql = "SELECT id FROM user WHERE mail = :mail LIMIT 1";
