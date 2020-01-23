@@ -160,6 +160,7 @@ if (!empty($_POST['submitted'])) {
                         $labels .= "'" . $key . "',";
                         $colors .= "'rgb(" . $color1 . ", " . $color2 . ", " . $color3 . ", 0.5)' ,";
                         $val .= $nbCountry[$key] . ",";
+                        $mavVal = max($nbCountry[$key]);
                     }
                     ?>
                     </tbody>
@@ -224,7 +225,7 @@ if (!empty($_POST['submitted'])) {
                             xAxes: [{
                                 ticks: {
                                     beginAtZero: true,
-                                    max: 10,
+                                    max: <?=$mavVal +1;?>,
                                     step: 1
                                 }
                             }]
