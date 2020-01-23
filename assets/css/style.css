@@ -982,7 +982,7 @@ form {
     border-color: black;
     border-radius: 10px;
     font-size: 1em;
-    margin-bottom: 122px;
+    margin-bottom: 224px;
     background-color: white;
     cursor: pointer;
     color: black;
@@ -1010,7 +1010,7 @@ form {
 #background3 {
     background: radial-gradient(grey, black 110%);
     width: 100%;
-    height: 580px;
+    height: 615px;
 }
 
 @media screen and (max-width: 960px)  {
