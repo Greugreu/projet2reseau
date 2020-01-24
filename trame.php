@@ -255,6 +255,6 @@ if (!empty($_POST['submitted'])) {
 }
 require_once("inc/footer.php");
 } else {
-    header('Location: 404.php');
+    header('Location: login.php');
 
 }

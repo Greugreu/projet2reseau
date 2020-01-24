@@ -1,6 +1,6 @@
 <?php
 
-include "inc/pdo.php";
+require_once  ("../inc/pdo.php");
 
 $id = $_GET['id'];
 
