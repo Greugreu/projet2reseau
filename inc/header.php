@@ -67,7 +67,7 @@
                                     <?php if (is_admin()) { ?>
                                     <a href="back/admin.php">Administration</a>
                                     <?php } ?>
-                                    <a href="login.php">Deconnexion</a>
+                                    <a href="deconnexion.php">Deconnexion</a>
                                     <?php } else { ?>
                                     <a href="index.php">Accueil</a>
                                     <a href="about.php">About us</a>

@@ -15,7 +15,7 @@ if (!empty($_POST['submitted'])) {
 
     if (count($errors) === 0) {
 
-        $sql = "INSERT INTO contact VALUES (NULL, :contactMail, :contactObjet, :contactMessage, NOW(), NULL)";
+        $sql = "INSERT INTO contact VALUES (NULL, :contactMail, :contactObjet, :contactMessage, NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':contactMail', $email, PDO::PARAM_STR);
         $query->bindValue(':contactObjet', $object, PDO::PARAM_STR);
