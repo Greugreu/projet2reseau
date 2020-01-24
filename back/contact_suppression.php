@@ -1,5 +1,4 @@
 <?php
-
 require ("../inc/pdo.php");
 
 $id = $_GET['id'];
