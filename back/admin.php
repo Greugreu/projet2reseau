@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('inc/pdo.php');
+require ("../inc/pdo.php");
 require ('../function/functions.php');
 
 $sql = "SELECT * from user WHERE 1";

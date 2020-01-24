@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ("inc/pdo.php");
+require ("../inc/pdo.php");
 require ("../function/functions.php");
 
 $id = $_GET['id'];
